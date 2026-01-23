@@ -4,11 +4,11 @@ Las Vegas Real Estate Authority Hub for Dr. Jan Duffy
 
 ## Overview
 
-A high-performance, SEO-optimized real estate website built with Next.js 15, featuring comprehensive community pages, market segment pages, and RealScout integration.
+A high-performance, SEO-optimized real estate website built with Next.js 14, featuring comprehensive community pages, market segment pages, and RealScout integration.
 
 ## Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
+- **Framework:** Next.js 14.2.13 (App Router)
 - **Styling:** Tailwind CSS
 - **Fonts:** Inter (body), Manrope (headings)
 - **Deployment:** Vercel-ready
@@ -58,8 +58,10 @@ src/
 │   ├── new-construction/   # New construction page
 │   ├── investors/          # Investment properties
 │   ├── sell-your-home/     # Seller services
+│   ├── divorce-real-estate/ # Divorce real estate services
+│   ├── probate-real-estate/ # Probate real estate services
 │   ├── layout.tsx          # Root layout
-│   ├── sitemap.ts          # SEO sitemap
+│   ├── sitemap.ts          # SEO sitemap (25+ URLs)
 │   └── robots.ts           # Robots.txt
 ├── components/             # React components
 │   ├── Header.tsx          # Site navigation
@@ -82,25 +84,26 @@ src/
 
 ### ✅ Completed
 
-- [x] Next.js 15 App Router setup
+- [x] Next.js 14 App Router setup (downgraded from 15 for stability)
 - [x] Tailwind CSS with Berkshire Hathaway brand colors
 - [x] Responsive Header and Footer
 - [x] Homepage with all sections (Hero, Trust Signals, Communities, Market Segments, RealScout, Testimonials)
-- [x] Community pages (dynamic routing for all communities)
+- [x] Community pages (dynamic routing for all 14+ communities)
 - [x] Market segment pages (Luxury, 55+, New Construction, Investors, Selling)
+- [x] Divorce real estate page (`/divorce-real-estate`)
+- [x] Probate real estate page (`/probate-real-estate`)
 - [x] About page with Dr. Jan's bio
 - [x] Contact page with form
-- [x] Schema markup (Organization, LocalBusiness, Breadcrumbs, RealEstateListing)
-- [x] SEO sitemap and robots.txt
+- [x] Schema markup (Organization, LocalBusiness, Breadcrumbs, RealEstateListing, FAQ)
+- [x] SEO sitemap (25+ URLs with priority optimization) and robots.txt
 - [x] RealScout widget component with CSP configuration
 - [x] Mobile-first responsive design
+- [x] Sitemap configured with www subdomain
 
 ### 🔄 To Do
 
 - [ ] Blog/market updates structure (`/blog` or `/market-updates`)
-- [ ] Divorce real estate page (`/divorce-real-estate`)
-- [ ] Probate real estate page (`/probate-real-estate`)
-- [ ] Contact form API endpoint
+- [ ] Contact form API endpoint (currently client-side only)
 - [ ] Google Analytics 4 integration (add GA4 ID to `siteDetails.ts`)
 - [ ] Image optimization (add actual images to `/public/images/`)
 - [ ] Google Maps embed for contact page
