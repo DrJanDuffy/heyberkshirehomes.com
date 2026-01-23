@@ -24,7 +24,7 @@ export default function WidgetTracker() {
 
     if (!existingScript) {
       // Widget Tracker initialization (IIFE pattern from provided code)
-      (function(w, i, d, g, e, t) {
+      (function(w, i, d, g, e) {
         w['WidgetTrackerObject'] = g;
         (w[g] = w[g] || function(...args: unknown[]) {
           const q = (w[g] as { q?: unknown[] }).q || [];
@@ -32,7 +32,7 @@ export default function WidgetTracker() {
         });
         (w[g] as { ds?: number }).ds = 1 * new Date().getTime();
         e = 'script';
-        t = d.createElement(e) as HTMLScriptElement;
+        const t = d.createElement(e) as HTMLScriptElement;
         const scriptElements = d.getElementsByTagName(e);
         const firstScript = scriptElements[0] as HTMLScriptElement;
         t.async = true;
@@ -40,7 +40,7 @@ export default function WidgetTracker() {
         if (firstScript && firstScript.parentNode) {
           firstScript.parentNode.insertBefore(t, firstScript);
         }
-      })(window, 'https://widgetbe.com/agent', document, 'widgetTracker', 'script', null);
+      })(window, 'https://widgetbe.com/agent', document, 'widgetTracker', 'script');
 
       // Initialize Widget Tracker after script loads
       const initTracker = () => {
