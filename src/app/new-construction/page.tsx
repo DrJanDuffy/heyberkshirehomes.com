@@ -14,7 +14,7 @@ export const metadata = {
 const builders = [
   { name: 'Century Communities', description: 'Modern designs and energy-efficient homes' },
   { name: 'KB Home', description: 'Personalized homes with innovative floor plans' },
-  { name: 'Lennar', description: 'Everything's Included® homes with premium features' },
+  { name: 'Lennar', description: "Everything's Included® homes with premium features" },
   { name: 'Pulte Homes', description: 'Quality craftsmanship and design flexibility' },
   { name: 'Toll Brothers', description: 'Luxury new construction and custom options' },
 ];

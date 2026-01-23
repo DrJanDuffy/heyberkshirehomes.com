@@ -55,9 +55,9 @@ export default async function CommunityPage({
     notFound();
   }
 
-  const relatedCommunities = community.relatedCommunities
+  const relatedCommunities = (community.relatedCommunities
     ?.map((relatedSlug) => getCommunityBySlug(relatedSlug))
-    .filter(Boolean) || [];
+    .filter((c): c is NonNullable<typeof c> => Boolean(c))) || [];
 
   const breadcrumbs = [
     { name: 'Home', url: siteDetails.siteUrl },

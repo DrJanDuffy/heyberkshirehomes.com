@@ -51,7 +51,6 @@ export function generateLocalBusinessSchema(): SchemaMarkup {
     '@id': `${siteDetails.siteUrl}/#localbusiness`,
     name: `${siteDetails.agent.name} - ${siteDetails.agent.brokerage}`,
     image: `${siteDetails.siteUrl}${siteDetails.siteLogo}`,
-    '@id': `${siteDetails.siteUrl}/#localbusiness`,
     url: siteDetails.siteUrl,
     telephone: siteDetails.contact.primaryPhone,
     priceRange: '$$$',

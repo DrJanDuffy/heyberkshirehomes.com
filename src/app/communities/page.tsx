@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { communities } from '@/data/communities';
 import CommunityCard from '@/components/CommunityCard';
 import Container from '@/components/Container';
@@ -91,7 +90,7 @@ export default function CommunitiesPage() {
       )}
 
       {/* CTA */}
-      <Section id="cta" title="Can't Find What You're Looking For?">
+      <Section id="cta" title="Can't Find What You're Looking For?" description="">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-lg text-foreground-accent mb-6">
             Every buyer has unique needs. Let's discuss your preferences and I'll

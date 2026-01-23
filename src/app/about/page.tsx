@@ -41,7 +41,7 @@ export default function AboutPage() {
       </section>
 
       {/* Bio Section */}
-      <Section id="bio" title="Your Las Vegas Real Estate Expert">
+      <Section id="bio" title="Your Las Vegas Real Estate Expert" description="">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="relative aspect-square rounded-xl overflow-hidden shadow-xl">

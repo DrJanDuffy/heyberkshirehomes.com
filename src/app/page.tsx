@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Hero from '@/components/Hero';
 import TrustSignals from '@/components/TrustSignals';
 import CommunityCard from '@/components/CommunityCard';
@@ -5,7 +6,6 @@ import MarketSegmentCard from '@/components/MarketSegmentCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import RealScoutWidget from '@/components/RealScoutWidget';
 import CTASection from '@/components/CTASection';
-import Container from '@/components/Container';
 import Section from '@/components/Section';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import {
@@ -182,10 +182,11 @@ export default function HomePage() {
             </a>
           </div>
           <div className="relative aspect-square rounded-xl overflow-hidden shadow-xl">
-            <img
+            <Image
               src="/images/dr-jan-duffy.jpg"
               alt="Dr. Jan Duffy"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
         </div>

@@ -230,7 +230,7 @@ export default function ContactPage() {
       </Section>
 
       {/* Map Section */}
-      <Section id="map" title="Office Location">
+      <Section id="map" title="Office Location" description="">
         <div className="max-w-4xl mx-auto">
           <div className="bg-warm-gray rounded-xl p-8 text-center">
             <p className="text-foreground-accent mb-4">
