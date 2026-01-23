@@ -65,6 +65,13 @@ realscout-home-value {
   --rs-hvw-widget-width: auto;
 }
 
+realscout-advanced-search {
+  --rs-as-button-text-color: #ffffff;
+  --rs-as-background-color: #ffffff;
+  --rs-as-button-color: #4a90e2;
+  --rs-as-widget-width: 500px !important;
+}
+
 .manrope {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;

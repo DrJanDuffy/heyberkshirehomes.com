@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import ServicesSection from '@/components/ServicesSection';
 import CommunitiesSection from '@/components/CommunitiesSection';
 import RealScoutWidget from '@/components/RealScoutWidget';
+import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 import AboutSection from '@/components/AboutSection';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
@@ -61,13 +62,16 @@ export default function HomePage() {
       {/* 3. Communities/Locations - Filterable */}
       <CommunitiesSection />
 
-      {/* 4. Property Search Widget */}
+      {/* 4. Property Search Widget - Advanced Search */}
       <Section
         id="search"
         title="Search Las Vegas Homes"
-        description="Browse active listings and find your perfect match"
+        description="Use our advanced search to find your perfect home with detailed filters"
+        className="bg-cream"
       >
-        <RealScoutWidget className="min-h-[600px]" />
+        <div className="flex justify-center">
+          <RealScoutAdvancedSearch className="w-full max-w-2xl" />
+        </div>
       </Section>
 
       {/* 5. About Dr. Jan - Brief with credentials as proof */}
