@@ -20,6 +20,9 @@ export const menuItems: MenuItem[] = [
       { text: 'Centennial Hills', url: '/communities/centennial-hills' },
       { text: 'Henderson', url: '/communities/henderson' },
       { text: '55+ Communities', url: '/55-plus-living' },
+      { text: 'Sun City Summerlin', url: '/communities/sun-city-summerlin' },
+      { text: 'Sun City Anthem', url: '/communities/sun-city-anthem' },
+      { text: 'Trilogy Summerlin', url: '/communities/trilogy-summerlin' },
     ],
   },
   {

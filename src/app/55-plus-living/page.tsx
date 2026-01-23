@@ -70,26 +70,32 @@ export default function ActiveAdultPage() {
         id="communities"
         title="Featured 55+ Communities"
         description="Las Vegas's premier active adult neighborhoods"
-        className="bg-warm-gray"
+        className="bg-cream"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {activeAdultCommunities.map((community) => (
-            <Link
-              key={community.slug}
-              href={`/communities/${community.slug}`}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all"
-            >
-              <h3 className="text-xl font-bold mb-2 font-display hover:text-primary">
-                {community.name}
-              </h3>
-              <p className="text-primary font-semibold mb-2">
-                {community.priceRange}
-              </p>
-              <p className="text-sm text-foreground-accent line-clamp-3">
-                {community.description}
-              </p>
-            </Link>
+          {/* Show detailed 55+ communities first with full cards */}
+          {getAll55PlusCommunities().map((community) => (
+            <CommunityCard 
+              key={community.slug} 
+              community={{
+                slug: community.slug,
+                name: community.name,
+                description: community.overview,
+                priceRange: community.priceRange,
+                homeStyles: community.floorplans.map(fp => fp.name),
+                yearBuilt: `${community.yearEstablished} - ${community.builderStatus === 'active' ? 'Present' : community.yearEstablished + 10}`,
+                hoaRange: community.hoaFees.monthlyRange,
+                category: '55plus' as const,
+                image: community.heroImage,
+              }} 
+            />
           ))}
+          {/* Then show simple 55+ communities that aren't in detailed list */}
+          {activeAdultCommunities
+            .filter(c => !getAll55PlusCommunities().some(detailed => detailed.slug === c.slug))
+            .map((community) => (
+              <CommunityCard key={community.slug} community={community} />
+            ))}
         </div>
       </Section>
 

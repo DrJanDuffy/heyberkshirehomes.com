@@ -78,6 +78,22 @@ const Footer: React.FC = () => {
                   55+ Communities
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/communities/sun-city-summerlin"
+                  className="text-gray-300 hover:text-gold-light transition-colors"
+                >
+                  Sun City Summerlin
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/communities/sun-city-anthem"
+                  className="text-gray-300 hover:text-gold-light transition-colors"
+                >
+                  Sun City Anthem
+                </Link>
+              </li>
             </ul>
           </div>
 
