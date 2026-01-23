@@ -12,8 +12,8 @@ export const siteDetails = {
   
   // Contact Information
   contact: {
-    primaryPhone: '702-222-1964',
-    professionalPhone: '702-500-1955',
+    primaryPhone: '702-500-1942',
+    professionalPhone: '702-500-1942',
     email: 'jan@heyberkshirehomes.com', // Update with actual email
     officeAddress: {
       street: '',
