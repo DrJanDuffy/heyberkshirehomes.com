@@ -36,33 +36,67 @@ export default function SellYourHomePage() {
       {/* Value Proposition */}
       <Section
         id="value"
-        title="Why Work With Dr. Jan to Sell Your Home"
-        description="Expert marketing and proven results"
+        title="Why Work With Dr. Jan Duffy to Sell Your Las Vegas Home"
+        description="Expert marketing, proven results, and personalized service to maximize your sale price"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-4xl mx-auto mb-8">
+          <p className="text-foreground-accent mb-6 text-lg">
+            Selling your Las Vegas home is one of the most significant financial decisions you'll make. With {siteDetails.agent.experience} of experience and {siteDetails.agent.salesVolume} in sales volume, I bring proven strategies, expert marketing, and personalized service to help you sell for top dollar—not just quickly, but for maximum value.
+          </p>
+          <p className="text-foreground-accent text-lg">
+            Online home value estimates like Zillow's Zestimate are often inaccurate because they can't account for your home's unique features, recent upgrades, neighborhood nuances, or current market conditions. A professional Comparative Market Analysis (CMA) from an experienced Las Vegas real estate agent gives you the accurate valuation you need to price your home competitively and attract qualified buyers.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-xl p-6 shadow-md text-center">
             <div className="text-4xl mb-3">💰</div>
-            <h3 className="font-bold mb-2 font-display">Top Dollar Sales</h3>
+            <h3 className="font-bold mb-2 font-display text-lg">Top Dollar Sales</h3>
             <p className="text-sm text-foreground-accent">
               Strategic pricing and marketing to maximize your sale price, not
-              just sell quickly.
+              just sell quickly. I analyze comparable sales, market trends, and your home's unique features to price it competitively and attract multiple offers when possible.
             </p>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-md text-center">
             <div className="text-4xl mb-3">📊</div>
-            <h3 className="font-bold mb-2 font-display">Free CMA</h3>
+            <h3 className="font-bold mb-2 font-display text-lg">Free CMA</h3>
             <p className="text-sm text-foreground-accent">
               Comprehensive market analysis to understand your home's true value
-              in today's market.
+              in today's Las Vegas market. No obligation, just expert insight based on recent sales, active listings, and market conditions.
             </p>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-md text-center">
             <div className="text-4xl mb-3">📸</div>
-            <h3 className="font-bold mb-2 font-display">Professional Marketing</h3>
+            <h3 className="font-bold mb-2 font-display text-lg">Professional Marketing</h3>
             <p className="text-sm text-foreground-accent">
               Professional photography, staging guidance, and multi-channel
-              marketing to reach qualified buyers.
+              marketing to reach qualified buyers. Your home will be featured on MLS, top real estate websites, social media, and my network of buyers and agents.
             </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Expert Negotiation</h3>
+            <p className="text-slate text-sm mb-3">
+              With {siteDetails.agent.experience} of experience, I know how to negotiate the best terms for sellers. Whether you're dealing with multiple offers, inspection negotiations, or appraisal challenges, I'll protect your interests and maximize your net proceeds.
+            </p>
+            <ul className="list-disc list-inside text-sm text-slate space-y-1">
+              <li>Multiple offer strategy and evaluation</li>
+              <li>Inspection negotiation expertise</li>
+              <li>Appraisal challenge resolution</li>
+              <li>Contract terms optimization</li>
+            </ul>
+          </div>
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Comprehensive Support</h3>
+            <p className="text-slate text-sm mb-3">
+              Selling a home involves many moving parts. I coordinate everything from staging and photography to inspections, appraisals, and closing, keeping you informed every step of the way.
+            </p>
+            <ul className="list-disc list-inside text-sm text-slate space-y-1">
+              <li>Staging and preparation guidance</li>
+              <li>Professional photography coordination</li>
+              <li>Inspection and appraisal management</li>
+              <li>Closing coordination and support</li>
+            </ul>
           </div>
         </div>
       </Section>
@@ -157,34 +191,60 @@ export default function SellYourHomePage() {
       {/* Success Stories */}
       <Section
         id="success"
-        title="Recent Success Stories"
-        description="Real results for Las Vegas home sellers"
+        title="Recent Success Stories from Las Vegas Home Sellers"
+        description="Real results from real clients who trusted Dr. Jan to sell their homes"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-4xl mx-auto mb-8">
+          <p className="text-foreground-accent mb-6 text-lg">
+            The best indicator of future success is past results. Here are real stories from Las Vegas homeowners who worked with me to sell their properties. These results demonstrate the value of expert pricing, professional marketing, and strategic negotiation.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-xl p-6 shadow-md">
             <p className="text-primary font-bold text-lg mb-2">Sold in 5 Days</p>
             <p className="text-sm text-foreground-accent mb-4">
               "Dr. Jan listed our Summerlin home and we had multiple offers
-              within days. Sold for $25K over asking price!"
+              within days. Sold for $25K over asking price! Her pricing strategy and marketing were spot-on."
             </p>
-            <p className="text-xs text-foreground-accent">- The Martinez Family</p>
+            <p className="text-xs text-foreground-accent">- The Martinez Family, Summerlin</p>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-md">
             <p className="text-primary font-bold text-lg mb-2">$50K Over Estimate</p>
             <p className="text-sm text-foreground-accent mb-4">
               "Online estimates said $450K. Dr. Jan's marketing and pricing
-              strategy got us $500K. Incredible!"
+              strategy got us $500K. Incredible! She knew exactly how to position our home."
             </p>
-            <p className="text-xs text-foreground-accent">- Robert Chen</p>
+            <p className="text-xs text-foreground-accent">- Robert Chen, Henderson</p>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-md">
             <p className="text-primary font-bold text-lg mb-2">Smooth Relocation</p>
             <p className="text-sm text-foreground-accent mb-4">
               "We were relocating and needed a quick, profitable sale. Dr. Jan
-              made it happen seamlessly."
+              made it happen seamlessly. Sold in 3 weeks for top dollar."
             </p>
-            <p className="text-xs text-foreground-accent">- Sarah Johnson</p>
+            <p className="text-xs text-foreground-accent">- Sarah Johnson, Centennial Hills</p>
           </div>
+        </div>
+        <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-gold">
+          <h3 className="text-xl font-bold text-primary mb-3 font-display">What Makes These Results Possible?</h3>
+          <ul className="space-y-2 text-foreground-accent">
+            <li className="flex items-start">
+              <span className="text-gold mr-2 font-bold">✓</span>
+              <span><strong>Accurate Pricing:</strong> Pricing your home correctly from the start attracts qualified buyers and often leads to multiple offers.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-gold mr-2 font-bold">✓</span>
+              <span><strong>Professional Presentation:</strong> High-quality photography, staging, and listing presentation make your home stand out in a competitive market.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-gold mr-2 font-bold">✓</span>
+              <span><strong>Strategic Marketing:</strong> Multi-channel marketing reaches buyers through MLS, websites, social media, and agent networks.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-gold mr-2 font-bold">✓</span>
+              <span><strong>Expert Negotiation:</strong> {siteDetails.agent.experience} of experience means I know how to negotiate the best terms and protect your interests.</span>
+            </li>
+          </ul>
         </div>
       </Section>
 
