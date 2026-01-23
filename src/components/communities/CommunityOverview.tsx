@@ -1,5 +1,4 @@
 import { Community } from '@/lib/communities';
-import Container from '../Container';
 import Section from '../Section';
 
 interface CommunityOverviewProps {

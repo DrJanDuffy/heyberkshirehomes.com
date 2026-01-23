@@ -1,7 +1,6 @@
 import { Community } from '@/lib/communities';
 import { siteDetails } from '@/data/siteDetails';
 import RealScoutWidget from '../RealScoutWidget';
-import Container from '../Container';
 import Section from '../Section';
 
 interface CommunityListingsProps {

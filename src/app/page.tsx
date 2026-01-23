@@ -1,7 +1,6 @@
 import Hero from '@/components/Hero';
 import ServicesSection from '@/components/ServicesSection';
 import CommunitiesSection from '@/components/CommunitiesSection';
-import RealScoutWidget from '@/components/RealScoutWidget';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 import AboutSection from '@/components/AboutSection';
 import TestimonialCard from '@/components/TestimonialCard';
