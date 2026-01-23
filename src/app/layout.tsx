@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FooterHomeValue from "@/components/FooterHomeValue";
 import RealScoutScript from "@/components/RealScoutScript";
+import WidgetTracker from "@/components/WidgetTracker";
 import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
@@ -86,6 +87,8 @@ export default function RootLayout({
       >
         {/* RealScout Widget Script - Load once globally for all pages */}
         <RealScoutScript />
+        {/* Widget Tracker - Analytics tracking */}
+        <WidgetTracker />
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
         <Header />
         <main>
