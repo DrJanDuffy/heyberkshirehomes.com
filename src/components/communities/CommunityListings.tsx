@@ -17,10 +17,31 @@ export default function CommunityListings({ community }: CommunityListingsProps)
       className="bg-cream"
     >
       <div className="mb-8">
-        <p className="text-slate text-center max-w-2xl mx-auto">
-          Search active listings in {community.name}. Prices typically range from {community.priceRange}.
-          {community.builderStatus === 'active' && ' Both new construction and resale homes are available.'}
+        <p className="text-slate text-center max-w-3xl mx-auto mb-4 text-lg">
+          Search active listings in {community.name}. Prices typically range from {community.priceRange}, offering options for various budgets and preferences.
+          {community.builderStatus === 'active' && ' Both new construction and resale homes are available, giving you flexibility in your home search.'}
         </p>
+        <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-gold max-w-3xl mx-auto">
+          <h3 className="text-xl font-bold text-primary mb-3 font-display">Search Features for {community.name}</h3>
+          <ul className="space-y-2 text-slate text-sm">
+            <li className="flex items-start">
+              <span className="text-gold mr-2 font-bold">✓</span>
+              <span><strong>Real-Time MLS Data:</strong> All listings are updated daily from the MLS, ensuring you see the most current inventory available in {community.name}.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-gold mr-2 font-bold">✓</span>
+              <span><strong>Community-Specific Results:</strong> Search results are automatically filtered to show only properties in {community.name}, saving you time and helping you focus on relevant listings.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-gold mr-2 font-bold">✓</span>
+              <span><strong>Price Range Filtering:</strong> The search is pre-filtered to show homes in the typical price range for {community.name} ({community.priceRange}), though you can adjust filters to see all available options.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-gold mr-2 font-bold">✓</span>
+              <span><strong>Off-Market Access:</strong> Call Dr. Jan at {siteDetails.contact.primaryPhone} for access to pocket listings, coming soon properties, and exclusive opportunities in {community.name} that aren't available on public MLS.</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
       {/* RealScout Widget with Community Filters - Using iframe embed */}
