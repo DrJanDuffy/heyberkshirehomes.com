@@ -13,8 +13,8 @@ export default function AboutSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
         <div>
           <p className="text-lg text-slate mb-6">
-            I've helped over {siteDetails.agent.familiesServed} families navigate Las Vegas real estate — 
-            from first-time buyers in Centennial Hills to $5M+ estates in The Ridges. 
+            With deep roots in Las Vegas real estate, I've helped over {siteDetails.agent.familiesServed} families 
+            find their perfect homes — from first-time buyers in Centennial Hills to $5M+ estates in The Ridges. 
             My approach: listen first, then match you with the right opportunity.
           </p>
           <Link

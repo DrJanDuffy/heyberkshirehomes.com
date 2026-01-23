@@ -1,16 +1,22 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteDetails } from '@/data/siteDetails';
 import Container from './Container';
 
 export default function Hero() {
   return (
-    <section className="relative bg-primary text-white py-20 lg:py-32 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px',
-        }} />
+    <section className="relative bg-primary text-white py-20 lg:py-28 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-las-vegas.jpg"
+          alt="Las Vegas skyline"
+          fill
+          className="object-cover"
+          priority
+          quality={90}
+        />
+        <div className="absolute inset-0 bg-primary/80" />
       </div>
 
       <Container className="relative z-10">
@@ -19,7 +25,7 @@ export default function Hero() {
             Buying, Selling, or Investing in Las Vegas?
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-200">
-            Expert guidance for every real estate goal — from first homes to luxury estates
+            Expert guidance for luxury homes, 55+ communities, new construction, and investments
           </p>
 
           {/* Service CTA Grid */}

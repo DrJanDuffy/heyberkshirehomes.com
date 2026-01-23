@@ -12,13 +12,22 @@ export default function CommunityCard({ community }: CommunityCardProps) {
       href={`/communities/${community.slug}`}
       className="group block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
     >
-      <div className="relative h-48 overflow-hidden">
-        <Image
-          src={community.image || '/images/community-placeholder.jpg'}
-          alt={community.name}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-        />
+      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/40">
+        {community.image ? (
+          <Image
+            src={community.image}
+            alt={`${community.name} community in Las Vegas`}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/30 via-primary/20 to-gold/20">
+            <div className="text-center text-white/80">
+              <div className="text-4xl mb-2">🏘️</div>
+              <div className="text-sm font-semibold">{community.name}</div>
+            </div>
+          </div>
+        )}
         <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
           {community.priceRange}
         </div>
