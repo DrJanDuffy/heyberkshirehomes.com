@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import Hero from '@/components/Hero';
-import TrustSignals from '@/components/TrustSignals';
-import CommunityCard from '@/components/CommunityCard';
-import MarketSegmentCard from '@/components/MarketSegmentCard';
-import TestimonialCard from '@/components/TestimonialCard';
+import ServicesSection from '@/components/ServicesSection';
+import CommunitiesSection from '@/components/CommunitiesSection';
 import RealScoutWidget from '@/components/RealScoutWidget';
+import AboutSection from '@/components/AboutSection';
+import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
 import Section from '@/components/Section';
 import SchemaMarkup from '@/components/SchemaMarkup';
@@ -12,7 +11,6 @@ import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
 } from '@/lib/schema';
-import { getCommunitiesByCategory } from '@/data/communities';
 import { siteDetails } from '@/data/siteDetails';
 
 export const metadata = {
@@ -25,39 +23,6 @@ export const metadata = {
     type: 'website',
   },
 };
-
-const marketSegments = [
-  {
-    title: 'Luxury Homes',
-    description: 'Discover $800K-$10M+ estates in Summerlin\'s most exclusive communities.',
-    href: '/luxury-homes',
-    icon: '🏰',
-  },
-  {
-    title: '55+ Living',
-    description: 'Active adult communities with resort-style amenities and vibrant social scenes.',
-    href: '/55-plus-living',
-    icon: '🌴',
-  },
-  {
-    title: 'New Construction',
-    description: 'Brand new homes from top builders with current incentives and warranties.',
-    href: '/new-construction',
-    icon: '🏗️',
-  },
-  {
-    title: 'Investors',
-    description: 'ROI-focused properties with market data and cash flow analysis.',
-    href: '/investors',
-    icon: '📊',
-  },
-  {
-    title: 'Selling Your Home',
-    description: 'Get a free CMA and expert marketing to sell for top dollar.',
-    href: '/sell-your-home',
-    icon: '🏡',
-  },
-];
 
 const testimonials = [
   {
@@ -81,56 +46,22 @@ const testimonials = [
 ];
 
 export default function HomePage() {
-  const featuredCommunities = [
-    ...getCommunitiesByCategory('luxury').slice(0, 2),
-    ...getCommunitiesByCategory('family').slice(0, 2),
-    ...getCommunitiesByCategory('55plus').slice(0, 2),
-  ];
-
   return (
     <>
       <SchemaMarkup
         schemas={[generateOrganizationSchema(), generateLocalBusinessSchema()]}
       />
+      
+      {/* 1. Hero - Service-focused CTAs (no stats) */}
       <Hero />
-      <TrustSignals />
 
-      {/* Featured Communities */}
-      <Section
-        id="communities"
-        title="Explore Las Vegas Communities"
-        description="From luxury estates to family-friendly neighborhoods, find your perfect community"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredCommunities.map((community) => (
-            <CommunityCard key={community.slug} community={community} />
-          ))}
-        </div>
-        <div className="text-center mt-8">
-          <a
-            href="/communities"
-            className="text-primary font-semibold hover:underline text-lg"
-          >
-            View All Communities →
-          </a>
-        </div>
-      </Section>
+      {/* 2. Services Section - Expanded with benefits */}
+      <ServicesSection />
 
-      {/* Market Segments */}
-      <Section
-        id="market-segments"
-        title="Your Real Estate Needs"
-        description="Expert guidance for every stage of your real estate journey"
-        className="bg-warm-gray"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {marketSegments.map((segment) => (
-            <MarketSegmentCard key={segment.href} {...segment} />
-          ))}
-        </div>
-      </Section>
+      {/* 3. Communities/Locations - Filterable */}
+      <CommunitiesSection />
 
-      {/* RealScout Widget */}
+      {/* 4. Property Search Widget */}
       <Section
         id="search"
         title="Search Las Vegas Homes"
@@ -139,7 +70,10 @@ export default function HomePage() {
         <RealScoutWidget className="min-h-[600px]" />
       </Section>
 
-      {/* Testimonials */}
+      {/* 5. About Dr. Jan - Brief with credentials as proof */}
+      <AboutSection />
+
+      {/* 6. Testimonials - Social proof */}
       <Section
         id="testimonials"
         title="What Our Clients Say"
@@ -153,45 +87,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* About Preview */}
-      <Section
-        id="about-preview"
-        title="Meet Dr. Jan Duffy"
-        description="Your trusted Las Vegas real estate expert"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h3 className="text-2xl font-bold mb-4 font-display">
-              {siteDetails.agent.fullName}
-            </h3>
-            <p className="text-foreground-accent mb-4">
-              With over {siteDetails.agent.experience} of experience in Las Vegas real estate, 
-              Dr. Jan Duffy has helped {siteDetails.agent.familiesServed} families find their 
-              perfect homes and achieve their real estate goals.
-            </p>
-            <p className="text-foreground-accent mb-6">
-              Specializing in luxury homes, 55+ communities, new construction, and investment 
-              properties, Dr. Jan brings deep market knowledge, professional expertise, and a 
-              personal touch to every transaction.
-            </p>
-            <a
-              href="/about"
-              className="inline-block bg-primary text-white hover:bg-primary-accent px-6 py-3 rounded-full font-semibold transition-colors"
-            >
-              Learn More About Dr. Jan →
-            </a>
-          </div>
-          <div className="relative aspect-square rounded-xl overflow-hidden shadow-xl">
-            <Image
-              src="/images/dr-jan-duffy.jpg"
-              alt="Dr. Jan Duffy"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </Section>
-
+      {/* 7. Contact CTA */}
       <CTASection />
     </>
   );
