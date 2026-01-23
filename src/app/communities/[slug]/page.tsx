@@ -337,10 +337,12 @@ export default async function CommunityPage({
             </div>
           </div>
           <RealScoutWidget
-            community={community.name}
             useIframe={true}
             className="min-h-[600px]"
           />
+          <p className="text-sm text-slate text-center mt-4 italic">
+            Use the search filters within the widget to filter by {community.name} or other communities. Price range: {community.priceRange}
+          </p>
         </Container>
       </section>
 

@@ -43,16 +43,19 @@ export default function CommunityListings({ community }: CommunityListingsProps)
         </div>
       </div>
 
-      {/* RealScout Widget with Community Filters - Using iframe embed */}
+      {/* RealScout Widget with Price Filters - Using iframe embed */}
+      {/* Note: Community filtering is done within the RealScout widget interface */}
       <div className="bg-white rounded-lg shadow-lg p-6">
         <RealScoutWidget
           widgetId={`realscout-${community.slug}`}
-          community={community.name}
           priceMin={community.priceMin}
           priceMax={community.priceMax}
           useIframe={true}
           className="min-h-[600px]"
         />
+        <p className="text-sm text-slate text-center mt-4 italic">
+          Use the search filters within the widget to filter by {community.name} or other communities.
+        </p>
       </div>
 
       <div className="mt-8 text-center">

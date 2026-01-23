@@ -36,13 +36,8 @@ export default function RealScoutWidget({
 
   // Agent ID is required
   iframeParams.append('agent', agentId);
-
-  // Community name (if provided)
-  if (community) {
-    iframeParams.append('community', community.toLowerCase().replace(/\s+/g, '-'));
-  }
   
-  // Price filters
+  // Price filters (RealScout supports these)
   if (priceMin !== undefined) {
     iframeParams.append('min_price', priceMin.toString());
   }
@@ -51,15 +46,16 @@ export default function RealScoutWidget({
   }
 
   // Override with filters if provided (only valid RealScout parameters)
+  // Note: RealScout embed endpoint may not support 'community' parameter
+  // Users can filter by community within the widget interface
   if (filters) {
     if (filters.priceMin) iframeParams.set('min_price', String(filters.priceMin));
     if (filters.priceMax) iframeParams.set('max_price', String(filters.priceMax));
-    if (filters.community) {
-      iframeParams.set('community', String(filters.community).toLowerCase().replace(/\s+/g, '-'));
-    }
+    // Removed community filter - RealScout embed doesn't support it via URL params
   }
 
   // Construct iframe URL - RealScout embed endpoint
+  // Only include agent and price filters (community filtering done within widget)
   const iframeUrl = `https://www.realscout.com/embed/search?${iframeParams.toString()}`;
 
   return (
