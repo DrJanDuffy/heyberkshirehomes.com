@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getCommunityBySlug, communities } from '@/data/communities';
@@ -49,6 +49,12 @@ export default async function CommunityPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  
+  // Redirect old broken URL to correct page
+  if (slug === '55-plus-communities') {
+    redirect('/55-plus-living');
+  }
+  
   const community = getCommunityBySlug(slug);
 
   if (!community) {
