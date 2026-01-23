@@ -191,7 +191,7 @@ export default function LuxuryHomesPage() {
         className="bg-warm-gray"
       >
         <RealScoutWidget
-          filters={{ minPrice: 800000, propertyType: 'Luxury' }}
+          priceMin={800000}
           className="min-h-[600px]"
         />
       </Section>

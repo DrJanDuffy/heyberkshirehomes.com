@@ -2,7 +2,6 @@ import RealScoutWidget from '@/components/RealScoutWidget';
 import CTASection from '@/components/CTASection';
 import Container from '@/components/Container';
 import Section from '@/components/Section';
-import Link from 'next/link';
 import { getCommunitiesByCategory } from '@/data/communities';
 import { getAll55PlusCommunities } from '@/lib/communities';
 import CommunityCard from '@/components/CommunityCard';
@@ -228,7 +227,6 @@ export default function ActiveAdultPage() {
         className="bg-warm-gray"
       >
         <RealScoutWidget
-          filters={{ propertyType: '55+', ageRestricted: true }}
           className="min-h-[600px]"
         />
       </Section>

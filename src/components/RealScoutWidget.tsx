@@ -33,13 +33,17 @@ export default function RealScoutWidget({
 
   // Use iframe embed for community pages or when explicitly requested
   if (useIframe || community) {
-    const iframeParams = new URLSearchParams({
-      agent: agentId,
-    });
+    const iframeParams = new URLSearchParams();
 
+    // Agent ID is required
+    iframeParams.append('agent', agentId);
+
+    // Community name (if provided)
     if (community) {
       iframeParams.append('community', community.toLowerCase().replace(/\s+/g, '-'));
     }
+    
+    // Price filters
     if (priceMin !== undefined) {
       iframeParams.append('min_price', priceMin.toString());
     }
@@ -47,7 +51,7 @@ export default function RealScoutWidget({
       iframeParams.append('max_price', priceMax.toString());
     }
 
-    // Override with filters if provided
+    // Override with filters if provided (only valid RealScout parameters)
     if (filters) {
       if (filters.priceMin) iframeParams.set('min_price', String(filters.priceMin));
       if (filters.priceMax) iframeParams.set('max_price', String(filters.priceMax));
@@ -56,6 +60,7 @@ export default function RealScoutWidget({
       }
     }
 
+    // Construct iframe URL - RealScout embed endpoint
     const iframeUrl = `https://www.realscout.com/embed/search?${iframeParams.toString()}`;
 
     return (

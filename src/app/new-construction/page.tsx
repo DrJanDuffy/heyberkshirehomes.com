@@ -265,7 +265,6 @@ export default function NewConstructionPage() {
         className="bg-warm-gray"
       >
         <RealScoutWidget
-          filters={{ propertyType: 'New Construction', newConstruction: true }}
           className="min-h-[600px]"
         />
       </Section>

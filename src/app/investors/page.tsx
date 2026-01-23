@@ -268,7 +268,6 @@ export default function InvestorsPage() {
         className="bg-warm-gray"
       >
         <RealScoutWidget
-          filters={{ investment: true, propertyType: 'Investment' }}
           className="min-h-[600px]"
         />
       </Section>
