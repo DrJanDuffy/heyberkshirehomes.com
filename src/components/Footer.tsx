@@ -1,69 +1,146 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaFingerprint } from 'react-icons/fa';
-
 import { siteDetails } from '@/data/siteDetails';
 import { footerDetails } from '@/data/footer';
-import { getPlatformIconByName } from '@/utils';
+import Container from './Container';
 
 const Footer: React.FC = () => {
-    return (
-        <footer className="bg-hero-background text-foreground py-10">
-            <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div>
-                    <Link href="/" className="flex items-center gap-2">
-                        <FaFingerprint className="min-w-fit w-5 h-5 md:w-7 md:h-7" />
-                        <h3 className="manrope text-xl font-semibold cursor-pointer">
-                            {siteDetails.siteName}
-                        </h3>
-                    </Link>
-                    <p className="mt-3.5 text-foreground-accent">
-                        {footerDetails.subheading}
-                    </p>
-                </div>
-                <div>
-                    <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul className="text-foreground-accent">
-                        {footerDetails.quickLinks.map(link => (
-                            <li key={link.text} className="mb-2">
-                                <Link href={link.url} className="hover:text-foreground">{link.text}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div>
-                    <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+  return (
+    <footer className="bg-foreground text-white py-12">
+      <Container>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* About */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 font-display">
+              {siteDetails.siteName}
+            </h3>
+            <p className="text-gray-300 mb-4">
+              {footerDetails.subheading}
+            </p>
+            <p className="text-sm text-gray-400">
+              License: {footerDetails.legal.license}
+            </p>
+            <p className="text-sm text-gray-400">
+              {footerDetails.legal.brokerage}
+            </p>
+          </div>
 
-                    {footerDetails.email && <a href={`mailto:${footerDetails.email}`}  className="block text-foreground-accent hover:text-foreground">Email: {footerDetails.email}</a>}
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 font-display">Quick Links</h4>
+            <ul className="space-y-2">
+              {footerDetails.quickLinks.map((link) => (
+                <li key={link.text}>
+                  <Link
+                    href={link.url}
+                    className="text-gray-300 hover:text-gold transition-colors"
+                  >
+                    {link.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                    {footerDetails.telephone && <a href={`tel:${footerDetails.telephone}`} className="block text-foreground-accent hover:text-foreground">Phone: {footerDetails.telephone}</a>}
+          {/* Communities */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 font-display">Communities</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/communities/summerlin-west"
+                  className="text-gray-300 hover:text-gold transition-colors"
+                >
+                  Summerlin West
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/communities/the-ridges"
+                  className="text-gray-300 hover:text-gold transition-colors"
+                >
+                  The Ridges
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/communities/skye-canyon"
+                  className="text-gray-300 hover:text-gold transition-colors"
+                >
+                  Skye Canyon
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/communities/55-plus-communities"
+                  className="text-gray-300 hover:text-gold transition-colors"
+                >
+                  55+ Communities
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-                    {footerDetails.socials && (
-                        <div className="mt-5 flex items-center gap-5 flex-wrap">
-                            {Object.keys(footerDetails.socials).map(platformName => {
-                                if (platformName && footerDetails.socials[platformName]) {
-                                    return (
-                                        <Link
-                                            href={footerDetails.socials[platformName]}
-                                            key={platformName}
-                                            aria-label={platformName}
-                                        >
-                                            {getPlatformIconByName(platformName)}
-                                        </Link>
-                                    )
-                                }
-                            })}
-                        </div>
-                    )}
-                </div>
+          {/* Contact */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 font-display">Contact</h4>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                <a
+                  href={`tel:${footerDetails.contact.primaryPhone}`}
+                  className="hover:text-gold transition-colors"
+                >
+                  Call/Text: {footerDetails.contact.primaryPhone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${footerDetails.contact.professionalPhone}`}
+                  className="hover:text-gold transition-colors text-sm"
+                >
+                  Office: {footerDetails.contact.professionalPhone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${footerDetails.contact.email}`}
+                  className="hover:text-gold transition-colors"
+                >
+                  {footerDetails.contact.email}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700 pt-8 mt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">
+              &copy; {new Date().getFullYear()} {siteDetails.siteName}. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              <Link
+                href="/privacy"
+                className="text-gray-400 hover:text-gold text-sm transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="text-gray-400 hover:text-gold text-sm transition-colors"
+              >
+                Terms of Service
+              </Link>
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <span>Equal Housing Opportunity</span>
+              </div>
             </div>
-            <div className="mt-8 md:text-center text-foreground-accent px-6">
-                <p>Copyright &copy; {new Date().getFullYear()} {siteDetails.siteName}. All rights reserved.</p>
-                <p className="text-sm mt-2 text-gray-500">Made with &hearts; by <a href="https://nexilaunch.com" target="_blank">Nexi Launch</a></p>
-                <p className="text-sm mt-2 text-gray-500">UI kit by <a href="https://ui8.net/youthmind/products/fintech-finance-mobile-app-ui-kit" target="_blank">Youthmind</a></p>
-            </div>
-        </footer>
-    );
+          </div>
+        </div>
+      </Container>
+    </footer>
+  );
 };
 
 export default Footer;

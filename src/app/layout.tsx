@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Source_Sans_3, Manrope } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,17 +8,39 @@ import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
 
-const manrope = Manrope({ subsets: ['latin'] });
-const sourceSans = Source_Sans_3({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+const manrope = Manrope({ 
+  subsets: ['latin'],
+  variable: '--font-manrope',
+});
 
 export const metadata: Metadata = {
-  title: siteDetails.metadata.title,
+  title: {
+    default: siteDetails.metadata.title,
+    template: `%s | ${siteDetails.siteName}`,
+  },
   description: siteDetails.metadata.description,
+  keywords: [
+    'Las Vegas real estate',
+    'Berkshire Hathaway Las Vegas',
+    'Las Vegas homes for sale',
+    'Summerlin real estate',
+    'Henderson real estate',
+    '55+ communities Las Vegas',
+    'luxury homes Las Vegas',
+    'Dr. Jan Duffy',
+  ],
+  authors: [{ name: siteDetails.agent.name }],
   openGraph: {
     title: siteDetails.metadata.title,
     description: siteDetails.metadata.description,
     url: siteDetails.siteUrl,
+    siteName: siteDetails.siteName,
     type: 'website',
+    locale: 'en_US',
     images: [
       {
         url: '/images/og-image.jpg',
@@ -34,6 +56,20 @@ export const metadata: Metadata = {
     description: siteDetails.metadata.description,
     images: ['/images/twitter-image.jpg'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add Google Search Console verification when available
+  },
 };
 
 export default function RootLayout({
@@ -44,7 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.className} ${sourceSans.className} antialiased`}
+        className={`${inter.variable} ${manrope.variable} font-sans antialiased`}
       >
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
         <Header />

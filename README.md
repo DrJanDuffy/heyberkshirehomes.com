@@ -1,104 +1,184 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnexi-launch%2Ffinwise-landing-page)
+# HeyBerkshireHomes.com
 
-# Finwise - Next.js + Tailwind Landing Page Template
+Las Vegas Real Estate Authority Hub for Dr. Jan Duffy
 
-Finwise is a lightweight, easily configurable, and customizable **Next.js** and **Tailwind CSS** landing page template. It’s built to be adaptable, performant, and perfect for any product launch, portfolio, or promotional site.
+## Overview
 
-Try out the demo here: [https://finwise-omega.vercel.app](https://finwise-omega.vercel.app).
+A high-performance, SEO-optimized real estate website built with Next.js 15, featuring comprehensive community pages, market segment pages, and RealScout integration.
 
-Please check out the documentation below to get started.
+## Tech Stack
 
----
-
-## Features
-
-- **Next.js** app router with **TypeScript**
-- **Tailwind CSS** v3 for flexible styling customization
-- Smooth transitions powered by **Framer Motion**
-- Built-in **font optimization** with [next/font](https://nextjs.org/docs/app/api-reference/components/font)
-- Automatic **image optimization** via [next/image](https://nextjs.org/docs/app/building-your-application/optimizing/images)
-- Access to **31+ icon packs** via [React Icons](https://react-icons.github.io/react-icons/)
-- Near-perfect **Lighthouse score**
-- Modular, responsive, and **scalable components**
-- **Free lifetime updates**
-
----
-
-## Sections
-
-- Hero
-- Partners or Clients Logos
-- Features
-- Pricing
-- Testimonials
-- FAQ
-- Statistics
-- CTA
-- Footer
-
----
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS
+- **Fonts:** Inter (body), Manrope (headings)
+- **Deployment:** Vercel-ready
+- **Analytics:** Google Analytics 4 ready
 
 ## Getting Started
 
-### Prerequisites
+### Installation
 
-Before starting, make sure you have the following installed:
+```bash
+npm install
+```
 
-- **Node.js**: Version 18 or later
-- **npm**: Version 8 or later (bundled with Node.js)
-- **Code editor**: [VS Code](https://code.visualstudio.com/) is recommended.
+### Development
 
-### Steps
+```bash
+npm run dev
+```
 
-1. **Install dependencies**: Run `npm install`
-2. **Run the development server**: `npm run dev`
-3. **View your project**: Open [localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
----
+### Build
 
-## Customization
+```bash
+npm run build
+```
 
-1. **Edit colors**: Update `globals.css` for primary, secondary, background, and accent colors.
-2. **Update site details**: Customize `siteDetails.ts` in `/src/data` to reflect your brand and site info.
-3. **Modify content**: Files in `/src/data` handle data for navigation, features, pricing, testimonials, and more.
-4. **Replace favicon**: Add your icon to `/src/app/favicon.ico`.
-5. **Add images**: Update `public/images` for Open Graph metadata (e.g., `og-image.jpg`, `twitter-image.jpg`).
+### Production
 
----
+```bash
+npm start
+```
 
-## Deploying on Vercel
+## Project Structure
 
-The fastest way to deploy Finwise is on [Vercel](https://vercel.com/). Simply click the "Deploy with Vercel" button at the top of this README, or check the [Next.js deployment docs](https://vercel.com/docs/deployments/deployment-methods) for other deployment options.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Homepage
+│   ├── about/              # About page
+│   ├── contact/            # Contact page
+│   ├── communities/        # Community pages
+│   │   ├── page.tsx        # Communities listing
+│   │   └── [slug]/         # Individual community pages
+│   ├── luxury-homes/       # Luxury homes page
+│   ├── 55-plus-living/     # Active adult communities
+│   ├── new-construction/   # New construction page
+│   ├── investors/          # Investment properties
+│   ├── sell-your-home/     # Seller services
+│   ├── layout.tsx          # Root layout
+│   ├── sitemap.ts          # SEO sitemap
+│   └── robots.ts           # Robots.txt
+├── components/             # React components
+│   ├── Header.tsx          # Site navigation
+│   ├── Footer.tsx          # Site footer
+│   ├── Hero.tsx            # Hero section
+│   ├── CTASection.tsx      # Call-to-action sections
+│   ├── RealScoutWidget.tsx # RealScout integration
+│   ├── SchemaMarkup.tsx    # Schema.org markup
+│   └── ...                 # Other components
+├── data/                   # Site data and configuration
+│   ├── siteDetails.ts      # Site configuration
+│   ├── communities.ts      # Community data
+│   ├── menuItems.ts        # Navigation menu
+│   └── footer.ts           # Footer data
+└── lib/                    # Utilities
+    └── schema.ts           # Schema markup generators
+```
 
----
+## Features
 
-## Contributing
+### ✅ Completed
 
-Finwise is an open-source project, and we welcome contributions from the community! If you have ideas for new components, designs, layouts, or optimizations, please join us in making Finwise even better.
+- [x] Next.js 15 App Router setup
+- [x] Tailwind CSS with Berkshire Hathaway brand colors
+- [x] Responsive Header and Footer
+- [x] Homepage with all sections (Hero, Trust Signals, Communities, Market Segments, RealScout, Testimonials)
+- [x] Community pages (dynamic routing for all communities)
+- [x] Market segment pages (Luxury, 55+, New Construction, Investors, Selling)
+- [x] About page with Dr. Jan's bio
+- [x] Contact page with form
+- [x] Schema markup (Organization, LocalBusiness, Breadcrumbs, RealEstateListing)
+- [x] SEO sitemap and robots.txt
+- [x] RealScout widget component with CSP configuration
+- [x] Mobile-first responsive design
 
-### How to Contribute
+### 🔄 To Do
 
-1. **Fork the Repository**: Clone it locally.
-2. **Create a New Branch**: For example, `feature/new-section` or `fix/style-issue`.
-3. **Develop and Test**: Make sure your changes work and don't break existing functionality.
-4. **Submit a Pull Request**: Open a pull request with a clear description of your changes, and we'll review it.
+- [ ] Blog/market updates structure (`/blog` or `/market-updates`)
+- [ ] Divorce real estate page (`/divorce-real-estate`)
+- [ ] Probate real estate page (`/probate-real-estate`)
+- [ ] Contact form API endpoint
+- [ ] Google Analytics 4 integration (add GA4 ID to `siteDetails.ts`)
+- [ ] Image optimization (add actual images to `/public/images/`)
+- [ ] Google Maps embed for contact page
+- [ ] RealScout widget actual integration (currently placeholder)
+- [ ] Privacy Policy and Terms of Service pages
+- [ ] 404 and error pages customization
 
-### Ideas for Contributions
+## Configuration
 
-- New component sections (team introductions, comparison table, case studies, etc.)
-- Additional page variants (e.g., agency, eCommerce, portfolio layouts)
-- Additional themes
-- Documentation updates, tutorials, or guides
+### Site Details
 
----
+Edit `src/data/siteDetails.ts` to update:
+- Contact information
+- Agent details
+- Social media links
+- Google Analytics ID
 
-## Community and Support
+### Communities
 
-Join our community discussions on GitHub to share ideas, ask questions, or suggest improvements. Let’s build something amazing together!
+Edit `src/data/communities.ts` to add or modify community information.
 
+### Brand Colors
 
---- 
+Colors are defined in:
+- `src/app/globals.css` (CSS variables)
+- `tailwind.config.ts` (Tailwind theme)
+
+Current brand colors:
+- Primary: `#6B1D2D` (Burgundy/Maroon)
+- Gold: `#D4AF37` (Accent)
+- Warm Gray: `#E8E6E1` (Backgrounds)
+
+## SEO Features
+
+- Semantic HTML5 structure
+- Schema.org markup on all pages
+- XML sitemap generation
+- robots.txt configuration
+- Open Graph and Twitter Card meta tags
+- Mobile-first responsive design
+- Core Web Vitals optimization ready
+
+## RealScout Integration
+
+The RealScout widget component is set up with proper CSP headers in `next.config.mjs`. To complete integration:
+
+1. Add your RealScout embed code/script
+2. Update `RealScoutWidget.tsx` with actual widget initialization
+3. Test widget functionality
+
+## Images Needed
+
+Add the following images to `/public/images/`:
+- `hero-las-vegas.jpg` - Homepage hero image
+- `dr-jan-duffy.jpg` - About page photo
+- `community-placeholder.jpg` - Default community image
+- `og-image.jpg` - Open Graph image (1200x675)
+- `twitter-image.jpg` - Twitter Card image
+
+## Deployment
+
+### Vercel
+
+1. Push to GitHub
+2. Import project in Vercel
+3. Deploy automatically
+
+### Environment Variables
+
+No environment variables required for basic setup. Add if needed for:
+- Google Analytics
+- Contact form API
+- RealScout API keys
 
 ## License
 
-This project is open-source and available under the MIT License. Feel free to use, modify, and distribute it for personal or commercial projects.
+Private project for Dr. Jan Duffy / HeyBerkshireHomes.com
+
+## Support
+
+For questions or issues, contact the development team.

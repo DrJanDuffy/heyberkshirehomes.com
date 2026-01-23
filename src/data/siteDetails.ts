@@ -1,12 +1,45 @@
 export const siteDetails = {
-    siteName: 'Finwise',
-    siteUrl: 'https://finwise-omega.vercel.app/',
-    metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+  siteName: 'HeyBerkshireHomes.com',
+  siteUrl: 'https://heyberkshirehomes.com',
+  metadata: {
+    title: 'Las Vegas Real Estate Expert | Dr. Jan Duffy | Berkshire Hathaway',
+    description: 'Your Las Vegas real estate expert with 30+ years experience. Find luxury homes, 55+ communities, new construction, and investment properties. Let me help you!',
+  },
+  language: 'en-us',
+  locale: 'en-US',
+  siteLogo: '/images/logo.png',
+  googleAnalyticsId: '', // Add GA4 ID when available
+  
+  // Contact Information
+  contact: {
+    primaryPhone: '702-222-1964',
+    professionalPhone: '702-500-1955',
+    email: 'jan@heyberkshirehomes.com', // Update with actual email
+    officeAddress: {
+      street: '',
+      city: 'Las Vegas',
+      state: 'NV',
+      zip: '',
     },
-    language: 'en-us',
-    locale: 'en-US',
-    siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
-    googleAnalyticsId: '', // e.g. G-XXXXXXX,
-}
+  },
+  
+  // Agent Information
+  agent: {
+    name: 'Dr. Jan Duffy',
+    fullName: 'Dr. Jan Duffy, Ph.D.',
+    license: 'S.0197614.LLC',
+    brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
+    tagline: 'Let Me Help You!',
+    experience: '30+ years',
+    familiesServed: '500+',
+    salesVolume: '$127M+',
+  },
+  
+  // Social Media
+  social: {
+    facebook: '',
+    instagram: '',
+    linkedin: '',
+    twitter: '',
+  },
+};

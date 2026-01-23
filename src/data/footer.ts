@@ -1,37 +1,26 @@
-import { IMenuItem, ISocials } from "@/types";
+import { siteDetails } from './siteDetails';
 
-export const footerDetails: {
-    subheading: string;
-    quickLinks: IMenuItem[];
-    email: string;
-    telephone: string;
-    socials: ISocials;
-} = {
-    subheading: "Empowering businesses with cutting-edge financial technology solutions.",
-    quickLinks: [
-        {
-            text: "Features",
-            url: "#features"
-        },
-        {
-            text: "Pricing",
-            url: "#pricing"
-        },
-        {
-            text: "Testimonials",
-            url: "#testimonials"
-        }
-    ],
-    email: 'address@yoursite.com',
-    telephone: '+1 (123) 456-7890',
-    socials: {
-        // github: 'https://github.com',
-        // x: 'https://twitter.com/x',
-        twitter: 'https://twitter.com/Twitter',
-        facebook: 'https://facebook.com',
-        // youtube: 'https://youtube.com',
-        linkedin: 'https://www.linkedin.com',
-        // threads: 'https://www.threads.net',
-        instagram: 'https://www.instagram.com',
-    }
-}
+export const footerDetails = {
+  subheading: `Your trusted Las Vegas real estate expert. ${siteDetails.agent.tagline}`,
+  quickLinks: [
+    { text: 'Home', url: '/' },
+    { text: 'About Dr. Jan', url: '/about' },
+    { text: 'Luxury Homes', url: '/luxury-homes' },
+    { text: '55+ Living', url: '/55-plus-living' },
+    { text: 'New Construction', url: '/new-construction' },
+    { text: 'Sell Your Home', url: '/sell-your-home' },
+    { text: 'Divorce Real Estate', url: '/divorce-real-estate' },
+    { text: 'Probate Real Estate', url: '/probate-real-estate' },
+    { text: 'Contact', url: '/contact' },
+  ],
+  contact: {
+    primaryPhone: siteDetails.contact.primaryPhone,
+    professionalPhone: siteDetails.contact.professionalPhone,
+    email: siteDetails.contact.email,
+  },
+  legal: {
+    license: siteDetails.agent.license,
+    brokerage: siteDetails.agent.brokerage,
+  },
+  socials: siteDetails.social,
+};

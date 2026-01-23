@@ -1,46 +1,73 @@
-import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
+import { siteDetails } from '@/data/siteDetails';
+import Container from './Container';
 
-import AppStoreButton from './AppStoreButton';
-import PlayStoreButton from './PlayStoreButton';
+export default function Hero() {
+  return (
+    <section className="relative bg-gradient-to-br from-primary via-primary-accent to-secondary text-white py-20 lg:py-32 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+          backgroundSize: '40px 40px',
+        }} />
+      </div>
 
-import { heroDetails } from '@/data/hero';
-
-const Hero: React.FC = () => {
-    return (
-        <section
-            id="hero"
-            className="relative flex items-center justify-center pb-0 pt-32 md:pt-40 px-5"
-        >
-            <div className="absolute left-0 top-0 bottom-0 -z-10 w-full">
-                <div className="absolute inset-0 h-full w-full bg-hero-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]">
-                </div>
+      <Container className="relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
+              Your Las Vegas Real Estate Expert
+            </h1>
+            <p className="text-xl md:text-2xl mb-4 text-white/90">
+              {siteDetails.agent.experience} of Experience • {siteDetails.agent.familiesServed} Families Served • ${siteDetails.agent.salesVolume} in Sales
+            </p>
+            <p className="text-lg mb-8 text-white/80">
+              Find your perfect home in Las Vegas with expert guidance from Dr. Jan Duffy. 
+              Luxury homes, 55+ communities, new construction, and investment properties.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a
+                href={`tel:${siteDetails.contact.primaryPhone}`}
+                className="bg-gold text-foreground hover:bg-gold-accent px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg hover:shadow-xl"
+              >
+                Call/Text {siteDetails.contact.primaryPhone}
+              </a>
+              <Link
+                href="#search"
+                className="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 px-8 py-4 rounded-full font-semibold text-lg transition-colors"
+              >
+                Start Your Search
+              </Link>
             </div>
+            <p className="mt-6 text-white/70 text-sm">
+              {siteDetails.agent.tagline}
+            </p>
+          </div>
 
-            <div className="absolute left-0 right-0 bottom-0 backdrop-blur-[2px] h-40 bg-gradient-to-b from-transparent via-[rgba(233,238,255,0.5)] to-[rgba(202,208,230,0.5)]">
+          {/* Image/Visual */}
+          <div className="relative">
+            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/hero-las-vegas.jpg"
+                alt="Las Vegas Real Estate"
+                fill
+                className="object-cover"
+                priority
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              />
             </div>
-
-            <div className="text-center">
-                <h1 className="text-4xl md:text-6xl md:leading-tight font-bold text-foreground max-w-lg md:max-w-2xl mx-auto">{heroDetails.heading}</h1>
-                <p className="mt-4 text-foreground max-w-lg mx-auto">{heroDetails.subheading}</p>
-                <div className="mt-6 flex flex-col sm:flex-row items-center sm:gap-4 w-fit mx-auto">
-                    <AppStoreButton dark />
-                    <PlayStoreButton dark />
-                </div>
-                <Image
-                    src={heroDetails.centerImageSrc}
-                    width={384}
-                    height={340}
-                    quality={100}
-                    sizes="(max-width: 768px) 100vw, 384px"
-                    priority={true}
-                    unoptimized={true}
-                    alt="app mockup"
-                    className='relative mt-12 md:mt-16 mx-auto z-10'
-                />
+            {/* Trust Badge Overlay */}
+            <div className="absolute -bottom-6 -left-6 bg-white text-foreground p-6 rounded-xl shadow-xl max-w-xs">
+              <p className="font-bold text-lg mb-2">Berkshire Hathaway</p>
+              <p className="text-sm text-foreground-accent">HomeServices Nevada Properties</p>
             </div>
-        </section>
-    );
-};
-
-export default Hero;
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
