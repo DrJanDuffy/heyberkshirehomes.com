@@ -4,6 +4,8 @@ import Container from '@/components/Container';
 import Section from '@/components/Section';
 import Link from 'next/link';
 import { getCommunitiesByCategory } from '@/data/communities';
+import { getAll55PlusCommunities } from '@/lib/communities';
+import CommunityCard from '@/components/CommunityCard';
 import { siteDetails } from '@/data/siteDetails';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema } from '@/lib/schema';
