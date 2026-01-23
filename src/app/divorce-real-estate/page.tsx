@@ -36,29 +36,50 @@ export default function DivorceRealEstatePage() {
       {/* Overview */}
       <Section
         id="overview"
-        title="Understanding Real Estate During Divorce"
+        title="Understanding Real Estate During Divorce in Las Vegas"
         description="Compassionate, professional guidance during a difficult time"
       >
-        <div className="max-w-3xl mx-auto prose prose-lg">
-          <p className="text-foreground-accent mb-4">
+        <div className="max-w-4xl mx-auto prose prose-lg">
+          <p className="text-foreground-accent mb-6 text-lg">
             Divorce is one of life's most challenging transitions, and real
-            estate decisions add significant complexity. Whether you need to sell
+            estate decisions add significant complexity to an already difficult situation. Whether you need to sell
             the marital home, buy a new property, or navigate property division,
             you need an agent who understands both the emotional and financial
-            aspects of this process.
+            aspects of this process, as well as the legal requirements that must be met.
           </p>
-          <p className="text-foreground-accent mb-4">
+          <p className="text-foreground-accent mb-6 text-lg">
             With {siteDetails.agent.experience} of experience in Las Vegas real
             estate, I've helped many families navigate property matters during
             divorce with sensitivity, discretion, and efficiency. My approach
             prioritizes quick, clean transactions that minimize stress and
-            maximize outcomes for all parties.
+            maximize outcomes for all parties. I understand that during divorce, time is often of the essence, and property matters need to be resolved efficiently.
           </p>
-          <p className="text-foreground-accent">
+          <p className="text-foreground-accent mb-6 text-lg">
             You can trust that your situation will be handled with complete
             confidentiality and professionalism. My goal is to make the real
-            estate aspect of your divorce as smooth as possible.
+            estate aspect of your divorce as smooth as possible, so you can focus on moving forward with your life. I work closely with divorce attorneys, mediators, and other professionals to ensure all legal requirements are met while facilitating the best possible outcome.
           </p>
+          <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-gold">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Common Real Estate Scenarios During Divorce</h3>
+            <ul className="space-y-2 text-foreground-accent">
+              <li className="flex items-start">
+                <span className="text-gold mr-2 font-bold">✓</span>
+                <span><strong>Selling the Marital Home:</strong> The most common scenario, where both parties agree to sell and divide proceeds. This requires fair market valuation, efficient marketing, and expedited closing when possible.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gold mr-2 font-bold">✓</span>
+                <span><strong>Buy-Out Situations:</strong> One party keeps the home and buys out the other's equity. This requires accurate property valuation and sometimes refinancing coordination.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gold mr-2 font-bold">✓</span>
+                <span><strong>Buying a New Home:</strong> After divorce, many people need to find a new home that fits their new financial situation and lifestyle. This requires understanding post-divorce finances and finding appropriate properties.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gold mr-2 font-bold">✓</span>
+                <span><strong>Investment Property Division:</strong> When couples own rental properties or investment real estate, these assets must be valued and divided, which may involve selling or transferring ownership.</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </Section>
 
@@ -131,33 +152,64 @@ export default function DivorceRealEstatePage() {
       {/* Why Choose Dr. Jan */}
       <Section
         id="why-choose"
-        title="Why Choose Dr. Jan for Divorce Real Estate"
-        description="Sensitivity, discretion, and results"
+        title="Why Choose Dr. Jan Duffy for Divorce Real Estate in Las Vegas"
+        description="Sensitivity, discretion, expertise, and results during a difficult time"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-4xl mx-auto mb-8">
+          <p className="text-foreground-accent mb-6 text-lg">
+            Divorce real estate requires a unique combination of sensitivity, legal understanding, and transaction expertise. With {siteDetails.agent.experience} of experience in Las Vegas real estate and a track record of helping families through divorce property matters, I bring the right combination of skills to ensure your real estate needs are handled professionally and efficiently.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-xl p-6 shadow-md text-center">
             <div className="text-4xl mb-3">🔒</div>
-            <h3 className="font-bold mb-2 font-display">Complete Discretion</h3>
+            <h3 className="font-bold mb-2 font-display text-lg">Complete Discretion</h3>
             <p className="text-sm text-foreground-accent">
               Your situation is handled with the utmost confidentiality. No
-              judgment, just professional service.
+              judgment, just professional service. I understand that divorce is a private matter, and I treat all information with complete discretion.
             </p>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-md text-center">
             <div className="text-4xl mb-3">⚡</div>
-            <h3 className="font-bold mb-2 font-display">Quick, Clean Sales</h3>
+            <h3 className="font-bold mb-2 font-display text-lg">Quick, Clean Sales</h3>
             <p className="text-sm text-foreground-accent">
               Expedited processes to minimize stress and facilitate your
-              transition. Fast closings when needed.
+              transition. Fast closings when needed, efficient marketing, and streamlined transactions to resolve property matters quickly.
             </p>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-md text-center">
             <div className="text-4xl mb-3">💼</div>
-            <h3 className="font-bold mb-2 font-display">Legal Coordination</h3>
+            <h3 className="font-bold mb-2 font-display text-lg">Legal Coordination</h3>
             <p className="text-sm text-foreground-accent">
               Experience working with divorce attorneys and understanding legal
-              requirements for property transactions.
+              requirements for property transactions. I coordinate with your legal team to ensure all requirements are met.
             </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Fair Market Valuation</h3>
+            <p className="text-slate text-sm mb-3">
+              Accurate property valuations are essential for property division during divorce. I provide comprehensive market analysis (CMA) that can be used in legal proceedings, ensuring fair market value determination for both parties.
+            </p>
+            <ul className="list-disc list-inside text-sm text-slate space-y-1">
+              <li>Comprehensive market analysis (CMA)</li>
+              <li>Fair market value reports for court</li>
+              <li>Documentation for legal proceedings</li>
+              <li>Expert testimony if required</li>
+            </ul>
+          </div>
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Neutral, Professional Service</h3>
+            <p className="text-slate text-sm mb-3">
+              When working with both parties or in cooperative sales, I maintain complete neutrality and professionalism. My goal is to facilitate a fair transaction that serves everyone's interests while minimizing conflict.
+            </p>
+            <ul className="list-disc list-inside text-sm text-slate space-y-1">
+              <li>Neutral representation when needed</li>
+              <li>Clear communication with all parties</li>
+              <li>Mediation support and coordination</li>
+              <li>Fair, transparent process</li>
+            </ul>
           </div>
         </div>
       </Section>
