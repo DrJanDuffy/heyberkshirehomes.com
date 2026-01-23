@@ -3,7 +3,6 @@ import React from 'react';
 import { siteDetails } from '@/data/siteDetails';
 import { footerDetails } from '@/data/footer';
 import Container from './Container';
-import RealScoutHomeValue from './RealScoutHomeValue';
 
 const Footer: React.FC = () => {
   return (
@@ -127,22 +126,6 @@ const Footer: React.FC = () => {
                 </a>
               </li>
             </ul>
-          </div>
-        </div>
-
-        {/* Home Value Widget Section 1 - Above footer content */}
-        <div className="border-t border-gray-700 pt-8 mt-8 mb-8">
-          <div className="max-w-4xl mx-auto">
-            <h4 className="text-xl font-semibold mb-4 text-center font-display">Get Your Home's Value</h4>
-            <RealScoutHomeValue className="w-full" />
-          </div>
-        </div>
-
-        {/* Home Value Widget Section 2 - Above bottom bar */}
-        <div className="border-t border-gray-700 pt-8 mt-8 mb-8">
-          <div className="max-w-4xl mx-auto">
-            <h4 className="text-xl font-semibold mb-4 text-center font-display">Free Home Valuation</h4>
-            <RealScoutHomeValue className="w-full" />
           </div>
         </div>
 
