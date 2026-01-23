@@ -72,6 +72,13 @@ realscout-advanced-search {
   --rs-as-widget-width: 500px !important;
 }
 
+realscout-simple-search {
+  --rs-ss-font-primary-color: #000000;
+  --rs-ss-searchbar-border-color: #8b572a;
+  --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
+  --rs-ss-widget-width: 500px !important;
+}
+
 .manrope {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;

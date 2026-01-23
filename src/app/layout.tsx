@@ -5,6 +5,7 @@ import { Inter, Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FooterHomeValue from "@/components/FooterHomeValue";
+import SimpleSearchSection from "@/components/SimpleSearchSection";
 import RealScoutScript from "@/components/RealScoutScript";
 import WidgetTracker from "@/components/WidgetTracker";
 import { siteDetails } from '@/data/siteDetails';
@@ -94,6 +95,8 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+        {/* Simple Search Section - Appears on every page */}
+        <SimpleSearchSection />
         {/* Home Value Widget Section - Before Footer */}
         <FooterHomeValue />
         <Footer />
