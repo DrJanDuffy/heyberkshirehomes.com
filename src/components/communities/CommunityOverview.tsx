@@ -40,7 +40,7 @@ export default function CommunityOverview({ community }: CommunityOverviewProps)
             <div className="text-sm text-slate">Established</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary mb-1">{community.builder}</div>
+            <div className="text-lg font-bold text-primary mb-1 line-clamp-2">{community.builder.split('(')[0].trim()}</div>
             <div className="text-sm text-slate">Builder</div>
           </div>
           <div className="text-center">
