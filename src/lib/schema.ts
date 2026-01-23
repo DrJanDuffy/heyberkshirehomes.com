@@ -3,7 +3,7 @@ import { siteDetails } from '@/data/siteDetails';
 export interface SchemaMarkup {
   '@context': string;
   '@type': string;
-  [key: string]: string | number | boolean | SchemaMarkup | SchemaMarkup[] | undefined;
+  [key: string]: unknown;
 }
 
 export function generateOrganizationSchema(): SchemaMarkup {
