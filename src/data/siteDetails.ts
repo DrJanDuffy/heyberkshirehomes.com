@@ -14,7 +14,7 @@ export const siteDetails = {
   contact: {
     primaryPhone: '702-500-1942',
     professionalPhone: '702-500-1942',
-    email: 'jan@heyberkshirehomes.com', // Update with actual email
+    email: 'DrDuffy@HeyBerkshireHomes.com',
     officeAddress: {
       street: '',
       city: 'Las Vegas',

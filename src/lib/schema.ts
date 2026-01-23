@@ -23,7 +23,7 @@ export function generateOrganizationSchema(): SchemaMarkup {
       addressCountry: 'US',
     },
     telephone: siteDetails.contact.primaryPhone,
-    email: siteDetails.contact.email,
+    email: siteDetails.contact.email.toLowerCase(),
     sameAs: [
       siteDetails.social.facebook,
       siteDetails.social.instagram,
