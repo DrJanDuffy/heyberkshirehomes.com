@@ -4,7 +4,7 @@ import Container from './Container';
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-primary via-primary-accent to-secondary text-white py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-primary text-white py-20 lg:py-32 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -18,7 +18,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
             Buying, Selling, or Investing in Las Vegas?
           </h1>
-          <p className="text-xl md:text-2xl mb-12 text-white/90">
+          <p className="text-xl md:text-2xl mb-12 text-gray-200">
             Expert guidance for every real estate goal — from first homes to luxury estates
           </p>
 
@@ -26,36 +26,36 @@ export default function Hero() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <Link
               href="/communities"
-              className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl p-6 transition-all hover:-translate-y-1"
+              className="group bg-white text-primary hover:bg-gold hover:text-white rounded-xl p-6 transition-all hover:-translate-y-1 shadow-lg"
             >
               <div className="text-4xl mb-3">🏠</div>
               <div className="font-semibold text-lg">Buy a Home</div>
             </Link>
             <Link
               href="/sell-your-home"
-              className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl p-6 transition-all hover:-translate-y-1"
+              className="group bg-white text-primary hover:bg-gold hover:text-white rounded-xl p-6 transition-all hover:-translate-y-1 shadow-lg"
             >
               <div className="text-4xl mb-3">💰</div>
               <div className="font-semibold text-lg">Sell Your Home</div>
             </Link>
             <Link
-              href="/investors"
-              className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl p-6 transition-all hover:-translate-y-1"
+              href="/55-plus-living"
+              className="group bg-white text-primary hover:bg-gold hover:text-white rounded-xl p-6 transition-all hover:-translate-y-1 shadow-lg"
             >
-              <div className="text-4xl mb-3">📈</div>
-              <div className="font-semibold text-lg">Invest in Real Estate</div>
+              <div className="text-4xl mb-3">🌴</div>
+              <div className="font-semibold text-lg">55+ Communities</div>
             </Link>
             <Link
-              href="/communities"
-              className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl p-6 transition-all hover:-translate-y-1"
+              href="/investors"
+              className="group bg-white text-primary hover:bg-gold hover:text-white rounded-xl p-6 transition-all hover:-translate-y-1 shadow-lg"
             >
-              <div className="text-4xl mb-3">📍</div>
-              <div className="font-semibold text-lg">Explore Communities</div>
+              <div className="text-4xl mb-3">📈</div>
+              <div className="font-semibold text-lg">Invest</div>
             </Link>
           </div>
 
-          <p className="text-lg text-white/80">
-            Questions? <a href={`tel:${siteDetails.contact.primaryPhone}`} className="text-gold hover:text-gold-accent font-semibold underline">Call/Text {siteDetails.contact.primaryPhone}</a>
+          <p className="text-lg text-gray-200">
+            Questions? <a href={`tel:${siteDetails.contact.primaryPhone}`} className="text-gold-light hover:text-gold font-semibold underline">Call/Text {siteDetails.contact.primaryPhone}</a>
           </p>
         </div>
       </Container>

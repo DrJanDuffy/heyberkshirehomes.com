@@ -27,14 +27,14 @@ export default function CommunityCard({ community }: CommunityCardProps) {
         <h3 className="text-xl font-bold mb-2 font-display group-hover:text-primary transition-colors">
           {community.name}
         </h3>
-        <p className="text-foreground-accent mb-4 line-clamp-2">
+        <p className="text-slate mb-4 line-clamp-2">
           {community.description}
         </p>
         <div className="flex flex-wrap gap-2 mb-4">
           {community.homeStyles.slice(0, 2).map((style) => (
             <span
               key={style}
-              className="text-xs bg-warm-gray text-foreground-accent px-2 py-1 rounded"
+              className="text-xs bg-gray-200 text-slate px-2 py-1 rounded"
             >
               {style}
             </span>

@@ -30,19 +30,19 @@ export default function CTASection({
   variant = 'default',
 }: CTASectionProps) {
   const bgClass = {
-    default: 'bg-warm-gray',
+    default: 'bg-cream',
     primary: 'bg-primary text-white',
-    dark: 'bg-foreground text-white',
+    dark: 'bg-black-charcoal text-white',
   }[variant];
 
   const buttonPrimaryClass = {
-    default: 'bg-primary text-white hover:bg-primary-accent',
-    primary: 'bg-gold text-foreground hover:bg-gold-accent',
-    dark: 'bg-gold text-foreground hover:bg-gold-accent',
+    default: 'bg-gold hover:bg-gold-dark text-white',
+    primary: 'bg-gold-light hover:bg-gold text-white',
+    dark: 'bg-gold-light hover:bg-gold text-white',
   }[variant];
 
   const buttonSecondaryClass = {
-    default: 'bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white',
+    default: 'bg-transparent text-primary border-2 border-gold hover:bg-gold hover:text-white',
     primary: 'bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20',
     dark: 'bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20',
   }[variant];

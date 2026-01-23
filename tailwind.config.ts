@@ -11,13 +11,23 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "var(--primary)",
+        primary: {
+          DEFAULT: "var(--primary)",
+          light: "var(--primary-light)",
+          dark: "var(--primary-dark)",
+        },
         secondary: "var(--secondary)",
-        "primary-accent": "var(--primary-accent)",
-        "foreground-accent": "var(--foreground-accent)",
-        "hero-background": "var(--hero-background)",
-        gold: "var(--gold)",
-        "gold-accent": "var(--gold-accent)",
+        black: {
+          DEFAULT: "var(--black)",
+          charcoal: "var(--charcoal)",
+        },
+        slate: "var(--slate)",
+        gold: {
+          DEFAULT: "var(--gold)",
+          light: "var(--gold-light)",
+          dark: "var(--gold-dark)",
+        },
+        cream: "var(--cream)",
         "warm-gray": "var(--warm-gray)",
       },
       fontFamily: {

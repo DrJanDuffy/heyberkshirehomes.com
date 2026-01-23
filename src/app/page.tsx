@@ -78,7 +78,7 @@ export default function HomePage() {
         id="testimonials"
         title="What Our Clients Say"
         description="Real experiences from families we've helped find their perfect homes"
-        className="bg-warm-gray"
+        className="bg-cream"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (

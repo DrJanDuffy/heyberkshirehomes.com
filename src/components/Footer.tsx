@@ -6,12 +6,12 @@ import Container from './Container';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-foreground text-white py-12">
+    <footer className="bg-black-charcoal text-white py-12">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4 font-display">
+            <h3 className="text-gold text-xl font-bold mb-4 font-display">
               {siteDetails.siteName}
             </h3>
             <p className="text-gray-300 mb-4">
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                 <li key={link.text}>
                   <Link
                     href={link.url}
-                    className="text-gray-300 hover:text-gold transition-colors"
+                    className="text-gray-300 hover:text-gold-light transition-colors"
                   >
                     {link.text}
                   </Link>
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/communities/summerlin-west"
-                  className="text-gray-300 hover:text-gold transition-colors"
+                  className="text-gray-300 hover:text-gold-light transition-colors"
                 >
                   Summerlin West
                 </Link>
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/communities/the-ridges"
-                  className="text-gray-300 hover:text-gold transition-colors"
+                  className="text-gray-300 hover:text-gold-light transition-colors"
                 >
                   The Ridges
                 </Link>
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/communities/skye-canyon"
-                  className="text-gray-300 hover:text-gold transition-colors"
+                  className="text-gray-300 hover:text-gold-light transition-colors"
                 >
                   Skye Canyon
                 </Link>
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/communities/55-plus-communities"
-                  className="text-gray-300 hover:text-gold transition-colors"
+                  className="text-gray-300 hover:text-gold-light transition-colors"
                 >
                   55+ Communities
                 </Link>

@@ -20,16 +20,16 @@ export default function TestimonialCard({
           ))}
         </div>
       </div>
-      <blockquote className="text-foreground mb-4 italic">
+      <blockquote className="text-slate mb-4 italic">
         "{quote}"
       </blockquote>
       {result && (
-        <p className="text-sm text-primary font-semibold mb-2">{result}</p>
+        <p className="text-sm text-gold font-semibold mb-2">{result}</p>
       )}
       <div className="border-t pt-4">
-        <p className="font-semibold text-foreground">{author}</p>
+        <p className="font-semibold text-slate">{author}</p>
         {location && (
-          <p className="text-sm text-foreground-accent">{location}</p>
+          <p className="text-sm text-slate/70">{location}</p>
         )}
       </div>
     </div>

@@ -85,29 +85,29 @@ export default function ServicesSection() {
       id="services"
       title="How Can I Help You?"
       description="Expert real estate services tailored to your unique goals and situation"
-      className="bg-warm-gray"
+      className="bg-cream"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service) => (
           <Link
             key={service.href}
             href={service.href}
-            className="group block bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
+            className="group block bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border-l-4 border-gold"
           >
             <div className="text-4xl mb-4">{service.icon}</div>
-            <h3 className="text-xl font-bold mb-2 font-display group-hover:text-primary transition-colors">
+            <h3 className="text-primary text-xl font-bold mb-2 font-display group-hover:text-primary-dark transition-colors">
               {service.title}
             </h3>
-            <p className="text-foreground-accent mb-4">{service.description}</p>
+            <p className="text-slate mb-4">{service.description}</p>
             <ul className="space-y-2 mb-4">
               {service.benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start text-sm text-foreground-accent">
-                  <span className="text-primary mr-2">✓</span>
+                <li key={index} className="flex items-start text-sm text-slate">
+                  <span className="text-gold mr-2">✓</span>
                   <span>{benefit}</span>
                 </li>
               ))}
             </ul>
-            <span className="text-primary font-semibold group-hover:underline">
+            <span className="text-gold hover:text-gold-dark font-semibold group-hover:underline">
               Learn More →
             </span>
           </Link>

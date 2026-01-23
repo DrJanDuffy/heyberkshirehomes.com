@@ -64,7 +64,7 @@ export default function CommunitiesSection() {
             className={`px-6 py-2 rounded-full font-semibold transition-colors ${
               activeFilter === filter.key
                 ? 'bg-primary text-white'
-                : 'bg-warm-gray text-foreground-accent hover:bg-warm-gray/80'
+                : 'bg-gray-200 text-slate hover:bg-gray-300'
             }`}
           >
             {filter.label}

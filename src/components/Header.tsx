@@ -75,7 +75,7 @@ const Header: React.FC = () => {
             <li>
               <a
                 href={`tel:${siteDetails.contact.primaryPhone}`}
-                className="bg-primary text-white hover:bg-primary-accent px-6 py-2 rounded-full transition-colors font-medium"
+                className="bg-primary text-white hover:bg-primary-light px-6 py-2 rounded-full transition-colors font-medium"
               >
                 Call {siteDetails.contact.primaryPhone}
               </a>
