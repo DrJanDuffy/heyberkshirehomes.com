@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 import { Inter, Manrope } from "next/font/google";
 
 import Header from "@/components/Header";
@@ -82,6 +83,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${manrope.variable} font-sans antialiased`}
       >
+        {/* RealScout Widget Script - Load once globally for all pages */}
+        {/* strategy="beforeInteractive" automatically injects into <head> */}
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          strategy="beforeInteractive"
+        />
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
         <Header />
         <main>

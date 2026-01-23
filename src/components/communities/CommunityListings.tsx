@@ -27,11 +27,8 @@ export default function CommunityListings({ community }: CommunityListingsProps)
       <div className="bg-white rounded-lg shadow-lg p-6">
         <RealScoutWidget
           widgetId={`realscout-${community.slug}`}
-          filters={{
-            community: community.name,
-            minPrice: community.priceMin,
-            maxPrice: community.priceMax,
-          }}
+          priceMin={community.priceMin}
+          priceMax={community.priceMax}
           className="min-h-[600px]"
         />
       </div>

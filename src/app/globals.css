@@ -48,6 +48,12 @@ body {
   }
 }
 
+/* RealScout Widget Styles */
+realscout-office-listings {
+  --rs-listing-divider-color: #0e64c8;
+  width: 100%;
+}
+
 .manrope {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;

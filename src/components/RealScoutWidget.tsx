@@ -1,62 +1,66 @@
 'use client';
 
-import { useEffect } from 'react';
-import Script from 'next/script';
-
-// Extend Window interface for RealScout
-declare global {
-  interface Window {
-    RealScout?: {
-      init?: () => void;
-      [key: string]: unknown;
-    };
-  }
-}
-
 interface RealScoutWidgetProps {
   widgetId?: string;
   filters?: Record<string, string | number | boolean>;
   className?: string;
+  agentEncodedId?: string;
+  sortOrder?: 'NEWEST' | 'PRICE_LOW_TO_HIGH' | 'PRICE_HIGH_TO_LOW' | 'SQUARE_FEET';
+  listingStatus?: 'For Sale' | 'Sold' | 'Pending';
+  propertyTypes?: string; // Comma-separated: SFR,MF,TC,LD,etc.
+  priceMin?: number;
+  priceMax?: number;
 }
 
 export default function RealScoutWidget({
   widgetId,
   filters,
   className = '',
+  agentEncodedId = 'QWdlbnQtMjI1MDUw', // Default agent ID from user
+  sortOrder = 'NEWEST',
+  listingStatus = 'For Sale',
+  propertyTypes = ',SFR,MF,TC',
+  priceMin,
+  priceMax,
 }: RealScoutWidgetProps) {
-  useEffect(() => {
-    // RealScout widget initialization will happen after script loads
-    // The widget script should handle initialization
-  }, []);
+  // Build widget attributes from props or filters
+  const widgetAttributes: Record<string, string> = {
+    'agent-encoded-id': agentEncodedId,
+    'sort-order': sortOrder,
+    'listing-status': listingStatus,
+    'property-types': propertyTypes,
+  };
+
+  // Add price filters if provided
+  if (priceMin !== undefined) {
+    widgetAttributes['price-min'] = priceMin.toString();
+  }
+  if (priceMax !== undefined) {
+    widgetAttributes['price-max'] = priceMax.toString();
+  }
+
+  // Override with filters if provided
+  if (filters) {
+    if (filters.priceMin) widgetAttributes['price-min'] = String(filters.priceMin);
+    if (filters.priceMax) widgetAttributes['price-max'] = String(filters.priceMax);
+    if (filters.community) {
+      // Community filter would need to be handled via RealScout's search parameters
+      // This is a placeholder - adjust based on RealScout's actual API
+    }
+  }
+
+  // Build attribute string for dangerouslySetInnerHTML
+  const attributesString = Object.entries(widgetAttributes)
+    .map(([key, value]) => `${key}="${value}"`)
+    .join(' ');
 
   return (
-    <>
-      {/* RealScout Script - Load once globally */}
-      <Script
-        src="https://em.realscout.com/js/embed.js"
-        strategy="lazyOnload"
-        onLoad={() => {
-          // Widget initialization handled by RealScout script
-          if (typeof window !== 'undefined' && 'RealScout' in window) {
-            // Widget will auto-initialize
-          }
-        }}
-      />
-      
-      {/* Widget Container */}
-      <div
-        id={widgetId || 'realscout-widget'}
-        className={`realscout-widget ${className}`}
-        data-filters={filters ? JSON.stringify(filters) : undefined}
-        dangerouslySetInnerHTML={{
-          __html: `
-            <!-- RealScout Widget will be injected here -->
-            <div style="min-height: 400px; display: flex; align-items: center; justify-content: center; background: #f8f7f5; border-radius: 8px;">
-              <p style="color: #666;">Loading property search...</p>
-            </div>
-          `,
-        }}
-      />
-    </>
+    <div
+      id={widgetId || 'realscout-widget'}
+      className={`realscout-widget ${className}`}
+      dangerouslySetInnerHTML={{
+        __html: `<realscout-office-listings ${attributesString}></realscout-office-listings>`,
+      }}
+    />
   );
 }
