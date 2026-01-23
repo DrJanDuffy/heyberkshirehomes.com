@@ -23,12 +23,14 @@ export default function CommunityListings({ community }: CommunityListingsProps)
         </p>
       </div>
 
-      {/* RealScout Widget with Community Filters */}
+      {/* RealScout Widget with Community Filters - Using iframe embed */}
       <div className="bg-white rounded-lg shadow-lg p-6">
         <RealScoutWidget
           widgetId={`realscout-${community.slug}`}
+          community={community.name}
           priceMin={community.priceMin}
           priceMax={community.priceMax}
+          useIframe={true}
           className="min-h-[600px]"
         />
       </div>

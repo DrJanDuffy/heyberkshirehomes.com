@@ -267,7 +267,8 @@ export default async function CommunityPage({
             Homes for Sale in {community.name}
           </h2>
           <RealScoutWidget
-            filters={{ community: community.name }}
+            community={community.name}
+            useIframe={true}
             className="min-h-[600px]"
           />
         </Container>

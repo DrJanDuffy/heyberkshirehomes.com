@@ -33,6 +33,7 @@ export const siteDetails = {
     experience: '30+ years',
     familiesServed: '500+',
     salesVolume: '$127M+',
+    realscoutAgentId: 'QWdlbnQtMjI1MDUw', // RealScout agent encoded ID
   },
   
   // Social Media
