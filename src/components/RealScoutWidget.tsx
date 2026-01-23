@@ -3,9 +3,19 @@
 import { useEffect } from 'react';
 import Script from 'next/script';
 
+// Extend Window interface for RealScout
+declare global {
+  interface Window {
+    RealScout?: {
+      init?: () => void;
+      [key: string]: unknown;
+    };
+  }
+}
+
 interface RealScoutWidgetProps {
   widgetId?: string;
-  filters?: Record<string, any>;
+  filters?: Record<string, string | number | boolean>;
   className?: string;
 }
 
@@ -27,7 +37,7 @@ export default function RealScoutWidget({
         strategy="lazyOnload"
         onLoad={() => {
           // Widget initialization handled by RealScout script
-          if (typeof window !== 'undefined' && (window as any).RealScout) {
+          if (typeof window !== 'undefined' && 'RealScout' in window) {
             // Widget will auto-initialize
           }
         }}
