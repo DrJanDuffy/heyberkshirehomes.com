@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/communities/55-plus-communities"
+                  href="/55-plus-living"
                   className="text-gray-300 hover:text-gold-light transition-colors"
                 >
                   55+ Communities

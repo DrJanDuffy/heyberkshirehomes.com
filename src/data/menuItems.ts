@@ -19,7 +19,7 @@ export const menuItems: MenuItem[] = [
       { text: 'Skye Canyon', url: '/communities/skye-canyon' },
       { text: 'Centennial Hills', url: '/communities/centennial-hills' },
       { text: 'Henderson', url: '/communities/henderson' },
-      { text: '55+ Communities', url: '/communities/55-plus-communities' },
+      { text: '55+ Communities', url: '/55-plus-living' },
     ],
   },
   {
