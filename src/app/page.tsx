@@ -53,45 +53,163 @@ export default function HomePage() {
         schemas={[generateOrganizationSchema(), generateLocalBusinessSchema()]}
       />
       
-      {/* 1. Hero - Service-focused CTAs (no stats) */}
+      {/* 1. Hero - Service-focused CTAs (no stats) - H1 is in Hero component */}
       <Hero />
 
-      {/* 2. Services Section - Expanded with benefits */}
+      {/* 2. Services Section - Expanded with benefits - H2 in Section component */}
       <ServicesSection />
 
-      {/* 3. Communities/Locations - Filterable */}
+      {/* 3. Las Vegas Real Estate Market Overview - New H2 section */}
+      <Section
+        id="market-overview"
+        title="Las Vegas Real Estate Market Overview"
+        description="Understanding the dynamic Las Vegas housing market"
+        className="bg-white"
+      >
+        <div className="max-w-4xl mx-auto prose prose-lg">
+          <p className="text-slate mb-6">
+            The Las Vegas real estate market continues to be one of the most dynamic and attractive markets in the Southwest. With a growing population, strong job market, and no state income tax, Las Vegas offers exceptional opportunities for homebuyers, sellers, and real estate investors alike.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-cream rounded-xl p-6">
+              <h3 className="text-xl font-bold text-primary mb-3 font-display">Strong Market Fundamentals</h3>
+              <p className="text-slate text-sm">
+                Las Vegas has experienced consistent population growth over the past decade, with new residents drawn by affordable housing, entertainment options, and business-friendly policies. This steady demand supports a healthy real estate market with opportunities across all price points.
+              </p>
+            </div>
+            <div className="bg-cream rounded-xl p-6">
+              <h3 className="text-xl font-bold text-primary mb-3 font-display">Diverse Neighborhood Options</h3>
+              <p className="text-slate text-sm">
+                From luxury estates in Summerlin to active adult communities and family-friendly neighborhoods, Las Vegas offers something for every lifestyle. Whether you're seeking a guard-gated community, golf course living, or new construction, the options are abundant.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-slate mb-6">
+            As your Las Vegas real estate expert, I bring {siteDetails.agent.experience} of experience navigating this market. I understand the nuances of different neighborhoods, market trends, and how to help you achieve your real estate goals whether you're buying, selling, or investing in Las Vegas properties.
+          </p>
+
+          <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-gold">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Why Las Vegas Real Estate?</h3>
+            <ul className="space-y-2 text-slate">
+              <li className="flex items-start">
+                <span className="text-gold mr-2 font-bold">✓</span>
+                <span><strong>No State Income Tax:</strong> Nevada's tax-friendly environment makes it attractive for retirees and high earners.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gold mr-2 font-bold">✓</span>
+                <span><strong>Affordable Luxury:</strong> Get more home for your money compared to California and other West Coast markets.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gold mr-2 font-bold">✓</span>
+                <span><strong>Year-Round Recreation:</strong> Golf courses, hiking trails, and entertainment options for an active lifestyle.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gold mr-2 font-bold">✓</span>
+                <span><strong>Strong Rental Market:</strong> Excellent opportunities for real estate investors with consistent rental demand.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* 4. Communities/Locations - Filterable - H2 in Section component */}
       <CommunitiesSection />
 
-      {/* 4. Property Search Widget - Advanced Search */}
+      {/* 5. Property Search Widget - Advanced Search - H2 in Section component */}
       <Section
         id="search"
-        title="Search Las Vegas Homes"
-        description="Use our advanced search to find your perfect home with detailed filters"
+        title="Search Las Vegas Homes for Sale"
+        description="Use our advanced search to find your perfect home with detailed filters. Browse MLS listings updated daily."
         className="bg-cream"
       >
+        <div className="mb-6 max-w-3xl mx-auto">
+          <p className="text-slate text-center mb-4">
+            Our comprehensive property search tool gives you access to all active MLS listings in Las Vegas, Henderson, Summerlin, and surrounding areas. Filter by price, bedrooms, bathrooms, square footage, community, and more to find exactly what you're looking for.
+          </p>
+          <p className="text-slate text-center text-sm">
+            <strong>Looking for off-market listings or coming soon properties?</strong> Call Dr. Jan at {siteDetails.contact.primaryPhone} for exclusive access to pocket listings and pre-market opportunities.
+          </p>
+        </div>
         <div className="flex justify-center">
           <RealScoutAdvancedSearch className="w-full max-w-2xl" />
         </div>
       </Section>
 
-      {/* 5. About Dr. Jan - Brief with credentials as proof */}
+      {/* 6. About Dr. Jan - Brief with credentials as proof - H2 in Section component */}
       <AboutSection />
 
-      {/* 6. Testimonials - Social proof */}
+      {/* 7. Testimonials - Social proof - H2 in Section component */}
       <Section
         id="testimonials"
-        title="What Our Clients Say"
-        description="Real experiences from families we've helped find their perfect homes"
+        title="What Our Clients Say About Dr. Jan Duffy"
+        description="Real experiences from families we've helped find their perfect homes in Las Vegas"
         className="bg-cream"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} {...testimonial} />
           ))}
         </div>
+        <div className="text-center">
+          <p className="text-slate mb-4">
+            With {siteDetails.agent.familiesServed} families served and {siteDetails.agent.salesVolume} in career sales volume, Dr. Jan Duffy has a proven track record of helping clients achieve their real estate goals in Las Vegas.
+          </p>
+          <p className="text-slate text-sm">
+            Whether you're buying your first home, upgrading to a luxury estate, or investing in rental properties, you can trust Dr. Jan's expertise and personalized approach.
+          </p>
+        </div>
       </Section>
 
-      {/* 7. Contact CTA */}
+      {/* 8. Why Choose Dr. Jan - New H2 section */}
+      <Section
+        id="why-choose"
+        title="Why Choose Dr. Jan Duffy for Your Las Vegas Real Estate Needs"
+        description="Experience, expertise, and personalized service that makes a difference"
+        className="bg-white"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">30+ Years of Las Vegas Market Experience</h3>
+            <p className="text-slate text-sm">
+              With over three decades of experience in Las Vegas real estate, Dr. Jan has witnessed market cycles, neighborhood transformations, and emerging opportunities. This deep market knowledge helps clients make informed decisions and avoid costly mistakes.
+            </p>
+          </div>
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Ph.D. Research-Driven Approach</h3>
+            <p className="text-slate text-sm">
+              Dr. Jan's advanced education brings analytical rigor to every transaction. Market analysis, pricing strategies, and investment evaluations are backed by thorough research and data-driven insights.
+            </p>
+          </div>
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Berkshire Hathaway HomeServices Network</h3>
+            <p className="text-slate text-sm">
+              As part of the prestigious Berkshire Hathaway HomeServices network, Dr. Jan has access to extensive resources, marketing tools, and a network of professionals to support your real estate transaction.
+            </p>
+          </div>
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Specialized Expertise Across Market Segments</h3>
+            <p className="text-slate text-sm">
+              From luxury homes in The Ridges to 55+ communities like Sun City Summerlin, new construction with top builders, and investment properties, Dr. Jan has specialized knowledge across all Las Vegas real estate segments.
+            </p>
+          </div>
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Personalized Service and Communication</h3>
+            <p className="text-slate text-sm">
+              Every client receives personalized attention tailored to their unique goals, timeline, and preferences. You'll always know where things stand with transparent, regular communication throughout your transaction.
+            </p>
+          </div>
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Proven Results and Client Satisfaction</h3>
+            <p className="text-slate text-sm">
+              {siteDetails.agent.familiesServed} families served and {siteDetails.agent.salesVolume} in sales volume demonstrate consistent results. Client testimonials and repeat business speak to the quality of service and outcomes.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* 9. Contact CTA */}
       <CTASection />
     </>
   );

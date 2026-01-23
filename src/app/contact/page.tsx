@@ -63,28 +63,39 @@ export default function ContactPage() {
       {/* Contact Methods */}
       <Section
         id="contact-methods"
-        title="Contact Dr. Jan Duffy"
-        description="Choose the way that works best for you"
+        title="Contact Dr. Jan Duffy - Your Las Vegas Real Estate Expert"
+        description="Choose the way that works best for you. I'm here to help with all your Las Vegas real estate needs."
       >
+        <div className="max-w-4xl mx-auto mb-8">
+          <p className="text-foreground-accent mb-6 text-lg">
+            Ready to start your Las Vegas real estate journey? Whether you're buying your first home, selling a property, exploring investment opportunities, or planning a move to a 55+ community, I'm here to help. With {siteDetails.agent.experience} of experience and {siteDetails.agent.familiesServed} families served, I bring the expertise and personalized service you deserve.
+          </p>
+          <p className="text-foreground-accent text-lg">
+            Choose the contact method that's most convenient for you. I typically respond to calls and texts within a few hours, and emails within 24 hours. For urgent matters or time-sensitive opportunities, calling or texting is the fastest way to reach me.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="bg-white rounded-xl p-6 shadow-md text-center">
             <div className="text-4xl mb-3">📞</div>
-            <h3 className="font-bold mb-2 font-display">Call or Text</h3>
+            <h3 className="font-bold mb-2 font-display text-lg">Call or Text</h3>
             <p className="text-sm text-foreground-accent mb-4">
-              Ready to get started?
+              Ready to get started? Call or text me directly for immediate assistance with your Las Vegas real estate questions or to schedule a consultation.
             </p>
             <a
               href={`tel:${siteDetails.contact.primaryPhone}`}
-              className="text-primary font-semibold hover:underline"
+              className="text-primary font-semibold hover:underline text-lg"
             >
               {siteDetails.contact.primaryPhone}
             </a>
+            <p className="text-xs text-foreground-accent mt-2">
+              Available for calls and texts 7 days a week
+            </p>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-md text-center">
             <div className="text-4xl mb-3">📧</div>
-            <h3 className="font-bold mb-2 font-display">Email</h3>
+            <h3 className="font-bold mb-2 font-display text-lg">Email</h3>
             <p className="text-sm text-foreground-accent mb-4">
-              Send me a message
+              Send me a detailed message about your real estate goals, questions, or property inquiries. I'll respond within 24 hours.
             </p>
             <a
               href={`mailto:${siteDetails.contact.email}`}
@@ -92,12 +103,15 @@ export default function ContactPage() {
             >
               {siteDetails.contact.email}
             </a>
+            <p className="text-xs text-foreground-accent mt-2">
+              Best for detailed questions and documentation
+            </p>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-md text-center">
             <div className="text-4xl mb-3">🏢</div>
-            <h3 className="font-bold mb-2 font-display">Office</h3>
+            <h3 className="font-bold mb-2 font-display text-lg">Office</h3>
             <p className="text-sm text-foreground-accent mb-4">
-              Professional inquiries
+              Professional inquiries, broker cooperation, and business partnerships. Reach me through my Berkshire Hathaway HomeServices Nevada Properties office.
             </p>
             <a
               href={`tel:${siteDetails.contact.professionalPhone}`}
@@ -105,6 +119,9 @@ export default function ContactPage() {
             >
               {siteDetails.contact.professionalPhone}
             </a>
+            <p className="text-xs text-foreground-accent mt-2">
+              {siteDetails.agent.brokerage}
+            </p>
           </div>
         </div>
       </Section>
@@ -229,23 +246,66 @@ export default function ContactPage() {
         </div>
       </Section>
 
-      {/* Map Section */}
-      <Section id="map" title="Office Location" description="">
+      {/* What to Expect Section */}
+      <Section
+        id="what-to-expect"
+        title="What to Expect When You Contact Dr. Jan Duffy"
+        description="Your first step toward achieving your Las Vegas real estate goals"
+        className="bg-warm-gray"
+      >
         <div className="max-w-4xl mx-auto">
-          <div className="bg-warm-gray rounded-xl p-8 text-center">
-            <p className="text-foreground-accent mb-4">
-              {siteDetails.agent.brokerage}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-white rounded-xl p-6">
+              <h3 className="text-xl font-bold text-primary mb-3 font-display">Initial Consultation</h3>
+              <p className="text-slate text-sm mb-3">
+                When you reach out, I'll take time to understand your real estate goals, timeline, budget, and preferences. This initial conversation helps me tailor my approach to your unique situation.
+              </p>
+              <ul className="list-disc list-inside text-sm text-slate space-y-1">
+                <li>Discussion of your real estate goals and timeline</li>
+                <li>Understanding your budget and financing situation</li>
+                <li>Identifying preferred neighborhoods and property types</li>
+                <li>Answering your questions about the Las Vegas market</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-xl p-6">
+              <h3 className="text-xl font-bold text-primary mb-3 font-display">Personalized Service Plan</h3>
+              <p className="text-slate text-sm mb-3">
+                Based on our conversation, I'll create a customized service plan that addresses your specific needs. Whether you're buying, selling, or investing, you'll have a clear roadmap.
+              </p>
+              <ul className="list-disc list-inside text-sm text-slate space-y-1">
+                <li>Customized property search or marketing strategy</li>
+                <li>Market analysis and pricing recommendations</li>
+                <li>Timeline and next steps clearly outlined</li>
+                <li>Regular communication schedule established</li>
+              </ul>
+            </div>
+          </div>
+          <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-gold">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">No Pressure, Just Help</h3>
+            <p className="text-slate text-sm">
+              My approach is consultative, not salesy. I'm here to provide expert guidance and help you make informed decisions. There's never any pressure—just honest advice and professional service designed to help you achieve your real estate goals in Las Vegas.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* Map Section */}
+      <Section id="map" title="Office Location and Service Area" description="Serving Las Vegas, Henderson, Summerlin, and surrounding areas">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-warm-gray rounded-xl p-8 text-center mb-6">
+            <h3 className="text-xl font-bold text-primary mb-4 font-display">{siteDetails.agent.brokerage}</h3>
+            <p className="text-foreground-accent mb-2">
+              License: {siteDetails.agent.license}
             </p>
             <p className="text-foreground-accent mb-6">
-              {siteDetails.contact.officeAddress.city},{' '}
-              {siteDetails.contact.officeAddress.state}
+              Serving {siteDetails.contact.officeAddress.city}, {siteDetails.contact.officeAddress.state} and surrounding areas
             </p>
-            <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+            <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center mb-6">
               <p className="text-foreground-accent">
                 Google Map Embed - Add map embed code here
               </p>
             </div>
-            <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={`tel:${siteDetails.contact.primaryPhone}`}
                 className="inline-block bg-primary text-white hover:bg-primary-accent px-6 py-3 rounded-full font-semibold transition-colors"
@@ -260,6 +320,46 @@ export default function ContactPage() {
               >
                 Get Directions
               </a>
+            </div>
+          </div>
+          <div className="bg-cream rounded-xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">Service Areas</h3>
+            <p className="text-slate text-sm mb-3">
+              I serve clients throughout the greater Las Vegas area, including:
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate">
+              <div>
+                <h4 className="font-semibold mb-1">Las Vegas</h4>
+                <ul className="space-y-1 text-xs">
+                  <li>• Summerlin</li>
+                  <li>• Centennial Hills</li>
+                  <li>• Northwest</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">Henderson</h4>
+                <ul className="space-y-1 text-xs">
+                  <li>• Green Valley</li>
+                  <li>• Anthem</li>
+                  <li>• Seven Hills</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">Other Areas</h4>
+                <ul className="space-y-1 text-xs">
+                  <li>• North Las Vegas</li>
+                  <li>• Boulder City</li>
+                  <li>• Southern Highlands</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">Specialties</h4>
+                <ul className="space-y-1 text-xs">
+                  <li>• Luxury Estates</li>
+                  <li>• 55+ Communities</li>
+                  <li>• New Construction</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
