@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { siteDetails } from '@/data/siteDetails';
 import { communities } from '@/data/communities';
+import { getAll55PlusCommunities } from '@/lib/communities';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteDetails.siteUrl;
@@ -98,5 +99,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticPages, ...communityPages];
+  // Detailed 55+ community pages - high priority for SEO
+  const detailed55PlusPages: MetadataRoute.Sitemap = getAll55PlusCommunities().map((community) => {
+    return {
+      url: `${baseUrl}/communities/${community.slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9, // High priority for detailed 55+ community pages
+    };
+  });
+
+  return [...staticPages, ...communityPages, ...detailed55PlusPages];
 }

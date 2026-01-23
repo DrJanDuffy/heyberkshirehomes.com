@@ -1,4 +1,5 @@
 import { communities } from '@/data/communities';
+import { getAll55PlusCommunities } from '@/lib/communities';
 import CommunityCard from '@/components/CommunityCard';
 import Container from '@/components/Container';
 import Section from '@/components/Section';
@@ -67,9 +68,29 @@ export default function CommunitiesPage() {
         description="Resort-style living for active adults"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {activeAdultCommunities.map((community) => (
-            <CommunityCard key={community.slug} community={community} />
+          {/* Show detailed 55+ communities first */}
+          {getAll55PlusCommunities().map((community) => (
+            <CommunityCard 
+              key={community.slug} 
+              community={{
+                slug: community.slug,
+                name: community.name,
+                description: community.overview,
+                priceRange: community.priceRange,
+                homeStyles: community.floorplans.map(fp => fp.name),
+                yearBuilt: `${community.yearEstablished} - ${community.builderStatus === 'active' ? 'Present' : community.yearEstablished + 10}`,
+                hoaRange: community.hoaFees.monthlyRange,
+                category: '55plus' as const,
+                image: community.heroImage,
+              }} 
+            />
           ))}
+          {/* Then show simple 55+ communities that aren't in detailed list */}
+          {activeAdultCommunities
+            .filter(c => !getAll55PlusCommunities().some(detailed => detailed.slug === c.slug))
+            .map((community) => (
+              <CommunityCard key={community.slug} community={community} />
+            ))}
         </div>
       </Section>
 
