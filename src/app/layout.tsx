@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: `${siteDetails.siteUrl}/images/og-image.jpg`,
         width: 1200,
         height: 675,
         alt: siteDetails.siteName,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteDetails.metadata.title,
     description: siteDetails.metadata.description,
-    images: ['/images/twitter-image.jpg'],
+    images: [`${siteDetails.siteUrl}/images/twitter-image.jpg`],
   },
   robots: {
     index: true,
