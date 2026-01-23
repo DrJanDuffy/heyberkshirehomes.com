@@ -35,33 +35,47 @@ export default function RealScoutWidget({
   // Wait for RealScout script to load before rendering widget
   useEffect(() => {
     const checkScript = () => {
-      // Check if customElements is defined and realscout-office-listings is registered
-      if (typeof window !== 'undefined' && window.customElements) {
-        try {
-          // Try to get the custom element definition
-          customElements.get('realscout-office-listings');
+      if (typeof window === 'undefined') return;
+
+      // Check if script tag exists
+      const script = document.querySelector(
+        'script[src="https://em.realscout.com/widgets/realscout-web-components.umd.js"]'
+      );
+
+      if (!script) {
+        // Script not loaded yet, check again
+        setTimeout(checkScript, 100);
+        return;
+      }
+
+      // Script exists, check if web component is registered
+      if (window.customElements) {
+        // Check if the custom element is defined (doesn't throw if not found)
+        const isDefined = window.customElements.get('realscout-office-listings') !== undefined;
+        if (isDefined) {
           setScriptLoaded(true);
-        } catch (e) {
+        } else {
           // Element not registered yet, wait a bit and check again
-          setTimeout(checkScript, 100);
+          setTimeout(checkScript, 200);
         }
       } else {
-        // Fallback: check if script tag exists
-        const script = document.querySelector(
-          'script[src="https://em.realscout.com/widgets/realscout-web-components.umd.js"]'
-        );
-        if (script) {
-          // Script exists, wait a bit for it to load
-          setTimeout(() => setScriptLoaded(true), 500);
-        } else {
-          // Script not found, check again
-          setTimeout(checkScript, 100);
-        }
+        // customElements not available, wait a bit for script to load
+        setTimeout(() => setScriptLoaded(true), 1000);
       }
     };
 
     // Start checking after component mounts
-    checkScript();
+    const timeout = setTimeout(checkScript, 100);
+    
+    // Also set a maximum timeout to show widget even if detection fails
+    const maxTimeout = setTimeout(() => {
+      setScriptLoaded(true);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timeout);
+      clearTimeout(maxTimeout);
+    };
   }, []);
 
   // Use web component - RealScout's official widget approach
