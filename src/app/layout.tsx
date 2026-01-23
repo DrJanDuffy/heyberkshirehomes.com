@@ -4,6 +4,7 @@ import { Inter, Manrope } from "next/font/google";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FooterHomeValue from "@/components/FooterHomeValue";
 import RealScoutScript from "@/components/RealScoutScript";
 import { siteDetails } from '@/data/siteDetails';
 
@@ -90,6 +91,8 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+        {/* Home Value Widget Section - Before Footer */}
+        <FooterHomeValue />
         <Footer />
       </body>
     </html>
